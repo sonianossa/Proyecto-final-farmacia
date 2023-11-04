@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmacia Purgimon Feliu</title>
+    <link rel="icon" type="image/x-icon" href="img/logo2.jpg" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-----------------------------------------------Inicio header y navBar--------------------------------------------->
+    <header class="header">
+      <a href="index.html">
+        <img
+          src="img/Logofarmacia.png"
+          alt="logo"
+          class="header__logoFarmacia"
+        />
+      </a>
+      <nav>
+        <ul class="header__menuNavegacion">
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="servicios.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Servicios</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="equipo.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Equipo</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="historia.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Historia</a
+            >
+          </li>
+        </ul>
+        <button class="boton__hamburguerIcon" type="button">
+          <!---------------------Se utilizan estos span para darles forma en css y que cada uno pueda obtener la animacion de 
+rotacion y que en javascript se pueda cambiar la forma de menu hamburguesa a la X por lo anterior
+no se utilizo fontawesome para el menu desplegable------------------------------------------------------------------->
+          <span class="barra1"></span>
+          <span class="barra2"></span>
+          <span class="barra3"></span>
+        </button>
+      </nav>
+      <div class="container__indicador">
+        <div class="indicador__progreso" id="barraScroll"></div>
+      </div>
+    </header>
+
+    <!---------------------------------------------Inicio main------------------------------------------------------------------->
+    <main class="main__fitoterapia">
+      <div class="contenido__heroImage__fitoterapia"></div>
+      <!--------------------------------------------Inicio seccion fitoterapia----------------------------------------------------------------------->
+      <h2 class="fitoterapia__titulo">Fitoterapia</h2>
+      <div class="contenido__fitoterapia">
+        <p class="fitoterapia__parrafo">
+          Sección fitoterapia <br />
+          La fitoterapia utiliza las plantas medicinales para prevenir o sanar
+          una enfermedad o bien para curar pequeños trastornos como se ha hecho
+          tradicionalmente: con el uso de las plantas medicinales consiste en
+          usar especies vegetales y sus derivados para prevenir, curar o aliviar
+          síntomas y enfermedades. Pues, las plantas constituyen un verdadero
+          arsenal químico gracias a su complejo metabolismo.
+        </p>
+        <img
+          src="img/fitoterapia.jpg"
+          alt="Imagen stand fitoterapia"
+          class="fitoterapia__imagen"
+        />
+      </div>
+      <h2 class="fitoterapia__marcas__titulo">
+        Conoce nuestras marcas de productos ofertados
+      </h2>
+      <!----------------------------------------------Inicio acordeon fitoterapia--------------------------------------------------------------------------------------------->
+      <button class="servicios__acordeon">Aboca</button>
+      <div class="fitoterapia__panel">
+        <p class="fitoterapia__texto">
+          En Aboca innovamos a través del estudio de la fisiopatología y de las
+          sustancias vegetales, buscando en la naturaleza las respuestas para la
+          salud del ser humano, respetando su organismo y el medioambiente.
+        </p>
+        <img
+          src="img/imagenaboca.png"
+          alt="Imagen Aboca"
+          class="fitoterapia__imagen2"
+        />
+      </div>
+
+      <button class="servicios__acordeon">Apoteca Natura</button>
+      <div class="fitoterapia__panel">
+        <p class="fitoterapia__texto">
+          Los productos Apoteca Natura están formulados en exclusiva para las
+          farmacias de nuestra red, siguiendo estándares de naturalidad que
+          respetan la fisiología del organismo y el medioambiente, de acuerdo
+          con nuestro Reglamento Apoteca Natura.
+        </p>
+        <img
+          src="img/imagenapoteca.png"
+          alt="Imagen Apoteca Natura"
+          class="fitoterapia__imagen2"
+        />
+      </div>
+
+      <button class="servicios__acordeon">Algēmica</button>
+      <div class="fitoterapia__panel">
+        <p class="fitoterapia__texto">
+          Los complementos alimenticios y fitoterapéuticos, Algēmica se
+          encuentran exclusivamente en centros especializados en suplementación
+          regenerativa, establecimientos formados científicamente donde podrán
+          asesorarle ampliamente sobre su salud con total confianza profesional
+          como la Farmacia Purgimon Feliu.Los complementos Algēmica están
+          formulados con ingredientes de máxima calidad, naturalidad y eficacia.
+          Todos están argumentados con estudios científicos que avalan sus
+          concentraciones y aplicaciones terapéuticas.
+        </p>
+        <img
+          src="img/imagenalgemica.webp"
+          alt="Imagen Algemica"
+          class="fitoterapia__imagen2"
+        />
+      </div>
+
+      <button class="servicios__acordeon">Drasanvi</button>
+      <div class="fitoterapia__panel">
+        <p class="fitoterapia__texto">
+          Drasanvi es lider en a nivel nacional e internacional en el
+          desarrollo, distribución y comercialización de suplementos
+          alimenticios, nutrición deportiva, alimentación bio y cosmética
+          ecológica.
+        </p>
+        <img
+          src="img/imagendrasanvi.png"
+          alt="Imagen Drasanvi"
+          class="fitoterapia__imagen2"
+        />
+      </div>
+
+      <button class="servicios__acordeon">Neovital</button>
+      <div class="fitoterapia__panel">
+        <p class="fitoterapia__texto">
+          En Neovital Health creemos en la naturaleza, por eso elaboramos
+          complementos alimenticios, tanto para niños como para adultos, a base
+          plantas y hongos medicinales, oligoelementos, vitaminas y minerales.
+          Nuestro compromiso, ofrecer productos naturales que ayuden a mejorar
+          la salud y la calidad de vida de las personas.
+        </p>
+        <img
+          src="img/imagenneovital.png"
+          alt="Imagen Neovital"
+          class="fitoterapia__imagen2"
+        />
+      </div>
+
+      <button class="servicios__acordeon">Vitae</button>
+      <div class="fitoterapia__panel">
+        <p class="fitoterapia__texto">
+          Elegimos nuestros ingredientes de forma meticulosa para asegurarnos la
+          máxima calidad y eficacia. Del mismo modo, buscamos fórmulas
+          sinérgicas basadas en los principios fisiológicos del cuerpo humano
+          para garantizar el mejor resultado.
+        </p>
+        <img
+          src="img/imagenvitae.png"
+          alt="Imagen Vitae"
+          class="fitoterapia__imagen2"
+        />
+      </div>
+      <!--------------------------------------------------Inicio bottom scroll top------------------------------------------------------->
+      <button class="boton__top" id="btn__top">
+        <i class="fa-solid fa-sort-up"></i>
+      </button>
+    </main>
+    <!-------------Inicio del footer se observara una breve discripcion de la faramacia, el contacto, sus redes sociales
+y un mapa con su ubicación------------------------------------------------------------------------------------------>
+    <footer class="footer">
+      <div class="footer__contenedor__texto">
+        <div class="footer__copy">
+          <span>Farmacia Purgimon Feliu.&copy;</span>
+        </div>
+        <div class="footer__texto">
+          <ul class="footer__texto__lista">
+            <li class="footer__texto__rrss">
+              <a href="https://www.instagram.com/farmaciapurgimon1973/?hl=es"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://www.tiktok.com/@farmacia_purgimon"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a
+                href="https://www.facebook.com/people/Farm%C3%A0cia-Purgimon/100063791270302/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://wa.me/34616020580"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.376233419235!2d1.4562016753268265!3d42.35582053537064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5edc6126166e1%3A0x6221596b4e499cb3!2sFarm%C3%A0cia%20Purgimon!5e0!3m2!1ses!2ses!4v1697287989082!5m2!1ses!2ses"
+          width="250"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmacia Purgimon Feliu</title>
+    <link rel="icon" type="image/x-icon" href="img/logo2.jpg" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-----------------------------------------------Inicio header y navBar--------------------------------------------->
+    <header class="header">
+      <a href="index.html">
+        <img
+          src="img/Logofarmacia.png"
+          alt="logo"
+          class="header__logoFarmacia"
+        />
+      </a>
+      <nav>
+        <ul class="header__menuNavegacion">
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="servicios.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Servicios</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="equipo.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Equipo</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="historia.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Historia</a
+            >
+          </li>
+        </ul>
+        <button class="boton__hamburguerIcon" type="button">
+          <!---------------------Se utilizan estos span para darles forma en css y que cada uno pueda obtener la animacion de 
+rotacion y que en javascript se pueda cambiar la forma de menu hamburguesa a la X por lo anterior
+no se utilizo fontawesome para el menu desplegable------------------------------------------------------------------->
+          <span class="barra1"></span>
+          <span class="barra2"></span>
+          <span class="barra3"></span>
+        </button>
+      </nav>
+      <div class="container__indicador">
+        <div class="indicador__progreso" id="barraScroll"></div>
+      </div>
+    </header>
+    <!------------------------------------------------Inicio main linea del tiempo--------------------------------------->
+    <main class="main__historia">
+      <h2 class="historia__titulo">Historia</h2>
+      <h3 class="historia__subtitulo">Sobre Nosotros</h3>
+      <div class="linea__temporal">
+        <div class="linea__temporal__contenedor contenedor__izquierdo">
+          <!--se implementa una clase nueva para no interrumpir
+            las propiedas de la clase linea__temporal__contenedor-->
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Creación</h2>
+            <h5 class="linea__temporal__fechas">4 de diciembre 1973</h5>
+            <p class="linea__temporal__parrafo">
+              Se situaba en la Calle Josep Zulueta número 16 de La Seu dUrgell y
+              contaba con 65 m² siendo la tercera farmacia en esta localidad.
+            </p>
+            <span class="contenedor__izquierdo__flecha"></span
+            ><!--coloco un span vacio ya que formara una flecha 
+                    en el contenedor por lo que se le da forma en css se coloca tambien porque es una etique la cual
+                  permite asignarle estilo de manera tal que es diferente al resto de los elementos del contendor
+                por lo que se le da esta etiqueta y se envuelve el contenid-->
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__derecho">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Creación</h2>
+            <img
+              src="img/farmaciainicios.jpg"
+              alt="Farmacia Inicios"
+              class="linea__temporal__imagen2"
+            />
+            <span class="contenedor__derecho__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__izquierdo">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">
+              Cambio de establecimiento
+            </h2>
+            <h5 class="linea__temporal__fechas">Año de 1978</h5>
+            <p class="linea__temporal__parrafo">
+              El nuevo local se situaba a 500 metros de la misma calle un
+              espacio renovado y amplio, esta nueva ubicación nos ayudo a
+              compaginar la vida laboral y personal ya que nuestra vivienda se
+              encontraba justo encima de la farmacia.
+            </p>
+            <span class="contenedor__izquierdo__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__derecho">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">
+              Cambio de establecimiento
+            </h2>
+            <img
+              src="img/farmacianueva.jpg"
+              alt="Farmacia Nueva"
+              class="linea__temporal__imagen2"
+            />
+            <span class="contenedor__derecho__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__izquierdo">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">
+              Innovación en la farmacia
+            </h2>
+            <h5 class="linea__temporal__fechas">10 de Junio 1995</h5>
+            <p class="linea__temporal__parrafo">
+              En los años siguientes y por diferentes viajes en el extranjero
+              visitando farmacias, descubrimos nuevos conceptos con
+              instalaciones modernas e innovadoras, lo cual pudimos implementar
+              y ofrecer un mejor servicio a nuestros clientes hasta el día de
+              hoy.
+            </p>
+            <span class="contenedor__izquierdo__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__derecho">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">
+              Innovación en la farmacia
+            </h2>
+            <img
+              src="img/farmaciaconcepto.jpg"
+              alt="Farmacia Innovación"
+              class="linea__temporal__imagen2"
+            />
+            <span class="contenedor__derecho__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__izquierdo">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Aniversario</h2>
+            <h5 class="linea__temporal__fechas">Diciembre de 1998</h5>
+            <p class="linea__temporal__parrafo">
+              Durante las fiestas de Navidad, celebramos el aniversario numero
+              25 de la Farmacia Purgimon. Nos reunimos para festejarlo con una
+              buena cena, recordando el esfuerzo y trabajo realizado durante
+              nuestra larga trayectoria profesional.
+            </p>
+            <span class="contenedor__izquierdo__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__derecho">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Aniversario</h2>
+            <img
+              src="img/farmaciaaniversario.jpg"
+              alt="Farmacia Aniversario"
+              class="linea__temporal__imagen2"
+            />
+            <span class="contenedor__derecho__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__izquierdo">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Jubilación</h2>
+            <h5 class="linea__temporal__fechas">Año 2011</h5>
+            <p class="linea__temporal__parrafo">
+              Después de 38 años de oficio, Joan Purgimon se jubiló y delegó en
+              su hijo Joan Lluis, la responsabilidad de sacar adelante el
+              negocio familiar.
+            </p>
+            <span class="contenedor__izquierdo__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__derecho">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Jubilación</h2>
+            <img
+              src="img/farmaciajubilacion.jpg"
+              alt="Farmacia Jubilación"
+              class="linea__temporal__imagen2"
+            />
+            <span class="contenedor__derecho__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__izquierdo">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Renovación</h2>
+            <h5 class="linea__temporal__fechas">30 de diciembre (Lleida)</h5>
+            <p class="linea__temporal__parrafo">
+              El cambio de nombre de la farmacia se hizo oficial en dicha fecha.
+              Nos reunimos para almorzar y celebrar este cambio y dar la
+              bienvenida a una nueva etapa.
+            </p>
+            <span class="contenedor__izquierdo__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__derecho">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Renovación</h2>
+            <img
+              src="img/farmaciarenovacion.jpg"
+              alt="Farmacia Renovacion"
+              class="linea__temporal__imagen2"
+            />
+            <span class="contenedor__derecho__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__izquierdo">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Actualidad</h2>
+            <h5 class="linea__temporal__fechas">Año 2023</h5>
+            <p class="linea__temporal__parrafo">
+              En la actualidad estamos especializados en productos naturales,
+              ortopedia, dermocosmetica y fitoterapia conjunto con otros
+              servicios concertados a la farmacia; es por esto que seguiremos
+              trabajando con el mismo entusiasmo del primer día y dando lo mejor
+              de nosotros para ofrecer un servicio de calidad por que somos un
+              agradable espacio de salud.
+            </p>
+            <span class="contenedor__izquierdo__flecha"></span>
+          </div>
+        </div>
+
+        <div class="linea__temporal__contenedor contenedor__derecho">
+          <img
+            src="img/logo2.jpg"
+            alt="Farmacia"
+            class="linea__temporal__imagen"
+          />
+          <div class="linea__temporal__contenedor--texto">
+            <h2 class="linea__temporal__titulo__texto">Actualidad</h2>
+            <img
+              src="img/portadaequipo.jpg"
+              alt="Farmacia Actualidad"
+              class="linea__temporal__imagen2"
+            />
+            <span class="contenedor__derecho__flecha"></span>
+          </div>
+        </div>
+      </div>
+      <!--------------------------------------------------Inicio bottom scroll top------------------------------------------------------->
+      <button class="boton__top" id="btn__top">
+        <i class="fa-solid fa-sort-up"></i>
+      </button>
+    </main>
+
+    <!-------------Inicio del footer se observara una breve discripcion de la faramacia, el contacto, sus redes sociales
+y un mapa con su ubicación------------------------------------------------------------------------------------------>
+    <footer class="footer">
+      <div class="footer__contenedor__texto">
+        <div class="footer__copy">
+          <span>Farmacia Purgimon Feliu.&copy;</span>
+        </div>
+        <div class="footer__texto">
+          <ul class="footer__texto__lista">
+            <li class="footer__texto__rrss">
+              <a href="https://www.instagram.com/farmaciapurgimon1973/?hl=es"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://www.tiktok.com/@farmacia_purgimon"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a
+                href="https://www.facebook.com/people/Farm%C3%A0cia-Purgimon/100063791270302/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://wa.me/34616020580"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.376233419235!2d1.4562016753268265!3d42.35582053537064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5edc6126166e1%3A0x6221596b4e499cb3!2sFarm%C3%A0cia%20Purgimon!5e0!3m2!1ses!2ses!4v1697287989082!5m2!1ses!2ses"
+          width="250"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

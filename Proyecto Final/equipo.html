@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmacia Purgimon Feliu</title>
+    <link rel="icon" type="image/x-icon" href="img/logo2.jpg" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-----------------------------------------------Inicio header y navBar--------------------------------------------->
+    <header class="header">
+      <a href="index.html">
+        <img
+          src="img/Logofarmacia.png"
+          alt="logo"
+          class="header__logoFarmacia"
+        />
+      </a>
+      <nav>
+        <ul class="header__menuNavegacion">
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="servicios.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Servicios</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="equipo.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Equipo</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="historia.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Historia</a
+            >
+          </li>
+        </ul>
+        <button class="boton__hamburguerIcon" type="button">
+          <!---------------------Se utilizan estos span para darles forma en css y que cada uno pueda obtener la animacion de 
+rotacion y que en javascript se pueda cambiar la forma de menu hamburguesa a la X por lo anterior
+no se utilizo fontawesome para el menu desplegable------------------------------------------------------------------->
+          <span class="barra1"></span>
+          <span class="barra2"></span>
+          <span class="barra3"></span>
+        </button>
+      </nav>
+      <div class="container__indicador">
+        <div class="indicador__progreso" id="barraScroll"></div>
+      </div>
+    </header>
+    <!------------------------------------------------Inicio main-------------------------------------------------------->
+    <main class="main__equipo">
+      <h2 class="equipo__titulo">Equipo Purgimon Feliu</h2>
+      <div class="equipo__contenedor__texto">
+        <p class="equipo__parrafo">
+          Tu espacio de salud te garantiza un equipo de profesionales que
+          atenderan todas sus necesidades, enfocados en salud natural.
+        </p>
+        <img
+          src="img/portadaequipo.jpg"
+          alt="Equipo Purgimon Feliu"
+          class="equipo__imagenPrincipal"
+        />
+      </div>
+      <h2 class="equipo__titulo__personal">Personal</h2>
+      <!-------------------------------------------------Inicio cards personal------------------------------------------------------------------------->
+      <div class="farmaceuticos__contenedor">
+        <div class="equipo__farmaceuticos__contenedor">
+          <div class="equipo__contenedor--texto">
+            <h3 class="equipo__subtitulo">JOAN LLUIS PURGIMON FELIU</h3>
+            <p class="equipo__parrafo__farmaceuticos">Farmacéutico Titular</p>
+          </div>
+          <img
+            src="img/joan.jpg"
+            alt="Farmaceutico Titular"
+            class="equipo__imagen__farmaceuticos"
+          />
+        </div>
+
+        <div class="equipo__farmaceuticos__contenedor">
+          <div class="equipo__contenedor--texto">
+            <h3 class="equipo__subtitulo">MONTSE CAPDEVILA</h3>
+            <p class="equipo__parrafo__farmaceuticos">Farmacéutica adjunta</p>
+          </div>
+          <img
+            src="img/montse.jpg"
+            alt="Farmaceutico Titular"
+            class="equipo__imagen__farmaceuticos"
+          />
+        </div>
+
+        <div class="equipo__farmaceuticos__contenedor">
+          <div class="equipo__contenedor--texto">
+            <h3 class="equipo__subtitulo">ANDREA</h3>
+            <p class="equipo__parrafo__farmaceuticos">Farmacéutica adjunta</p>
+          </div>
+          <img
+            src="img/andrea.jpg"
+            alt="Farmaceutico Titular"
+            class="equipo__imagen__farmaceuticos"
+          />
+        </div>
+
+        <div class="equipo__farmaceuticos__contenedor">
+          <div class="equipo__contenedor--texto">
+            <h3 class="equipo__subtitulo">ISABEL</h3>
+            <p class="equipo__parrafo__farmaceuticos">Tecnica en farmacia</p>
+          </div>
+          <img
+            src="img/isabel.jpg"
+            alt="Farmaceutico Titular"
+            class="equipo__imagen__farmaceuticos"
+          />
+        </div>
+
+        <div class="equipo__farmaceuticos__contenedor">
+          <div class="equipo__contenedor--texto">
+            <h3 class="equipo__subtitulo">LOURDES SOLE</h3>
+            <p class="equipo__parrafo__farmaceuticos">Enfermera</p>
+          </div>
+          <img
+            src="img/lourdes.jpg"
+            alt="Farmaceutico Titular"
+            class="equipo__imagen__farmaceuticos"
+          />
+        </div>
+
+        <div class="equipo__farmaceuticos__contenedor">
+          <div class="equipo__contenedor--texto">
+            <h3 class="equipo__subtitulo">CARMEN</h3>
+            <p class="equipo__parrafo__farmaceuticos">Terapeuta</p>
+          </div>
+          <img
+            src="img/carmen.jpg"
+            alt="Farmaceutico Titular"
+            class="equipo__imagen__farmaceuticos"
+          />
+        </div>
+      </div>
+      <!--------------------------------------------------Inicio bottom scroll top------------------------------------------------------->
+      <button class="boton__top" id="btn__top">
+        <i class="fa-solid fa-sort-up"></i>
+      </button>
+    </main>
+    <!-------------Inicio del footer se observara una breve discripcion de la faramacia, el contacto, sus redes sociales
+y un mapa con su ubicación------------------------------------------------------------------------------------------>
+    <footer class="footer">
+      <div class="footer__contenedor__texto">
+        <div class="footer__copy">
+          <span>Farmacia Purgimon Feliu.&copy;</span>
+        </div>
+        <div class="footer__texto">
+          <ul class="footer__texto__lista">
+            <li class="footer__texto__rrss">
+              <a href="https://www.instagram.com/farmaciapurgimon1973/?hl=es"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://www.tiktok.com/@farmacia_purgimon"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a
+                href="https://www.facebook.com/people/Farm%C3%A0cia-Purgimon/100063791270302/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://wa.me/34616020580"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.376233419235!2d1.4562016753268265!3d42.35582053537064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5edc6126166e1%3A0x6221596b4e499cb3!2sFarm%C3%A0cia%20Purgimon!5e0!3m2!1ses!2ses!4v1697287989082!5m2!1ses!2ses"
+          width="250"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

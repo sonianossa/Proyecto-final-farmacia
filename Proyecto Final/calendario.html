@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmacia Purgimon Feliu</title>
+    <link rel="icon" type="image/x-icon" href="img/logo2.jpg" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-----------------------------------------------Inicio header y navBar--------------------------------------------->
+    <header class="header">
+      <a href="index.html">
+        <img
+          src="img/Logofarmacia.png"
+          alt="logo"
+          class="header__logoFarmacia"
+        />
+      </a>
+      <nav>
+        <ul class="header__menuNavegacion">
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="servicios.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Servicios</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="equipo.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Equipo</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="historia.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Historia</a
+            >
+          </li>
+        </ul>
+        <button class="boton__hamburguerIcon" type="button">
+          <!---------------------Se utilizan estos span para darles forma en css y que cada uno pueda obtener la animacion de 
+rotacion y que en javascript se pueda cambiar la forma de menu hamburguesa a la X por lo anterior
+no se utilizo fontawesome para el menu desplegable------------------------------------------------------------------->
+          <span class="barra1"></span>
+          <span class="barra2"></span>
+          <span class="barra3"></span>
+        </button>
+      </nav>
+      <div class="container__indicador">
+        <div class="indicador__progreso" id="barraScroll"></div>
+      </div>
+    </header>
+    <!------------------------------------------------------Inicio main calendario------------------------------------->
+    <main class="main__calendario">
+      <h2 class="calendario__titulo">Calendario de guardias y vaciones 2023</h2>
+      <h2 class="calendario__guardias__vacaciones__tituloGuardias2">
+        Cambio de guardia Jueves a las 20H
+      </h2>
+      <ul class="calendario__guardias__vacaciones__farmaceuticos2">
+        <li class="calendario__guardias__vacaciones__purgi2">PURGIMON</li>
+        <li class="calendario__guardias__vacaciones__guilan2">GUILANYA</li>
+        <li class="calendario__guardias__vacaciones__bar2">BARIOS</li>
+        <li class="calendario__guardias__vacaciones__peru2">PERUCHET</li>
+        <li class="calendario__guardias__vacaciones__marsin2">MARSINYACH</li>
+      </ul>
+      <!-----------------------------------Inicio calendario por mes--------------------------------------------------------------------------------------->
+      <div class="calendario__guardias__contenido">
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">1</h2>
+            <h2 class="calendario__guardias__texto__mes2">Enero</h2>
+          </div>
+          <img
+            src="img/calendarioene.png"
+            alt="CalendarioEnero"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">2</h2>
+            <h2 class="calendario__guardias__texto__mes2">Febrero</h2>
+          </div>
+          <img
+            src="img/calendariofeb.png"
+            alt="CalendarioFebrero"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">3</h2>
+            <h2 class="calendario__guardias__texto__mes2">Marzo</h2>
+          </div>
+          <img
+            src="img/calendariomar.png"
+            alt="CalendarioMarzo"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">4</h2>
+            <h2 class="calendario__guardias__texto__mes2">Abril</h2>
+          </div>
+          <img
+            src="img/calendarioabr.png"
+            alt="CalendarioAbril"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">5</h2>
+            <h2 class="calendario__guardias__texto__mes2">Mayo</h2>
+          </div>
+          <img
+            src="img/calendariomay.png"
+            alt="CalendarioMayo"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">6</h2>
+            <h2 class="calendario__guardias__texto__mes2">Junio</h2>
+          </div>
+          <img
+            src="img/calendariojun.png"
+            alt="CalendarioJunio"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">7</h2>
+            <h2 class="calendario__guardias__texto__mes2">Julio</h2>
+          </div>
+          <img
+            src="img/calendariojul.png"
+            alt="CalendarioJulio"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">8</h2>
+            <h2 class="calendario__guardias__texto__mes2">Agosto</h2>
+          </div>
+          <img
+            src="img/calendarioago.png"
+            alt="CalendarioAgosto"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">9</h2>
+            <h2 class="calendario__guardias__texto__mes2">Septiembre</h2>
+          </div>
+          <img
+            src="img/calendariosep.png"
+            alt="CalendarioSeptiembre"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">10</h2>
+            <h2 class="calendario__guardias__texto__mes2">Octubre</h2>
+          </div>
+          <img
+            src="img/calendariooct.png"
+            alt="CalendarioOctubre"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">11</h2>
+            <h2 class="calendario__guardias__texto__mes2">Noviembre</h2>
+          </div>
+          <img
+            src="img/calendarionov2.png"
+            alt="CalendarioNoviembre"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+        <div class="calendario__guardias__card2">
+          <div class="calendario__guardias__texto2">
+            <h2 class="calendario__guardias__texto__numero2">12</h2>
+            <h2 class="calendario__guardias__texto__mes2">Diciembre</h2>
+          </div>
+          <img
+            src="img/calendariodic.png"
+            alt="CalendarioDiciembre"
+            class="calendario__guardias__texto__imagen2"
+          />
+        </div>
+      </div>
+      <!--------------------------------------------------Inicio bottom scroll top------------------------------------------------------->
+      <button class="boton__top" id="btn__top">
+        <i class="fa-solid fa-sort-up"></i>
+      </button>
+    </main>
+    <!-------------Inicio del footer se observara una breve discripcion de la faramacia, el contacto, sus redes sociales
+y un mapa con su ubicación------------------------------------------------------------------------------------------>
+    <footer class="footer">
+      <div class="footer__contenedor__texto">
+        <div class="footer__copy">
+          <span>Farmacia Purgimon Feliu.&copy;</span>
+        </div>
+        <div class="footer__texto">
+          <ul class="footer__texto__lista">
+            <li class="footer__texto__rrss">
+              <a href="https://www.instagram.com/farmaciapurgimon1973/?hl=es"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://www.tiktok.com/@farmacia_purgimon"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a
+                href="https://www.facebook.com/people/Farm%C3%A0cia-Purgimon/100063791270302/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://wa.me/34616020580"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.376233419235!2d1.4562016753268265!3d42.35582053537064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5edc6126166e1%3A0x6221596b4e499cb3!2sFarm%C3%A0cia%20Purgimon!5e0!3m2!1ses!2ses!4v1697287989082!5m2!1ses!2ses"
+          width="250"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

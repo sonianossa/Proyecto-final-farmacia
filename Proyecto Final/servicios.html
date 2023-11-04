@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmacia Purgimon Feliu</title>
+    <link rel="icon" type="image/x-icon" href="img/logo2.jpg" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-----------------------------------------------Inicio header y navBar--------------------------------------------->
+    <header class="header">
+      <a href="index.html">
+        <img
+          src="img/Logofarmacia.png"
+          alt="logo"
+          class="header__logoFarmacia"
+        />
+      </a>
+      <nav>
+        <ul class="header__menuNavegacion">
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="servicios.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Servicios</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="equipo.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Equipo</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="historia.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Historia</a
+            >
+          </li>
+        </ul>
+        <button class="boton__hamburguerIcon" type="button">
+          <!---------------------Se utilizan estos span para darles forma en css y que cada uno pueda obtener la animacion de 
+rotacion y que en javascript se pueda cambiar la forma de menu hamburguesa a la X por lo anterior
+no se utilizo fontawesome para el menu desplegable------------------------------------------------------------------->
+          <span class="barra1"></span>
+          <span class="barra2"></span>
+          <span class="barra3"></span>
+        </button>
+      </nav>
+      <div class="container__indicador">
+        <div class="indicador__progreso" id="barraScroll"></div>
+      </div>
+    </header>
+    <!--------------------------------------------Inicio main---------------------------------------------------------->
+    <main class="main__servicios">
+      <h2 class="servicios__titulo">Nuestros Servicios</h2>
+      <div class="servicios__contenedor">
+        <div class="servicios__card">
+          <a href="ortopedia.html" class="servicio__ortopedia">
+            <img
+              src="img/iconoortopedia.png"
+              alt="Icono Andador"
+              class="servicios__ortopedia__imagen"
+            />
+          </a>
+          <h3 class="servicios__titulo__card">Ortopedia</h3>
+          <p class="servicios__texto__card">
+            Productos ortopedicos <br />
+            ayudas tecnicas<br />
+            a tu salud.
+          </p>
+        </div>
+        <div class="servicios__card">
+          <a href="dermocosmetica.html" class="servicio__dermocosmetica">
+            <img
+              src="img/iconodermocosmetica.png"
+              alt="Icono Dermocosmetica"
+              class="servicios__dermocosmetica__imagen"
+            />
+          </a>
+          <h3 class="servicios__titulo__card">Dermocosmetica</h3>
+          <p class="servicios__texto__card">
+            Productos para el <br />
+            cuidado de tu piel.
+          </p>
+        </div>
+        <div class="servicios__card">
+          <a href="fitoterapia.html" class="servicio__fitoterapia">
+            <img
+              src="img/iconofitoterapia.png"
+              alt="Icono fitoterapia"
+              class="servicios__fitoterapia__imagen"
+            />
+          </a>
+          <h3 class="servicios__titulo__card">Fitoterapia</h3>
+          <p class="servicios__texto__card">Medicina alternativa.</p>
+        </div>
+      </div>
+      <!--------------------------------------------------Inicio bottom scroll top------------------------------------------------------->
+      <button class="boton__top" id="btn__top">
+        <i class="fa-solid fa-sort-up"></i>
+      </button>
+    </main>
+    <!-------------Inicio del footer se observara una breve discripcion de la faramacia, el contacto, sus redes sociales
+y un mapa con su ubicación------------------------------------------------------------------------------------------>
+    <footer class="footer">
+      <div class="footer__contenedor__texto">
+        <div class="footer__copy">
+          <span>Farmacia Purgimon Feliu.&copy;</span>
+        </div>
+        <div class="footer__texto">
+          <ul class="footer__texto__lista">
+            <li class="footer__texto__rrss">
+              <a href="https://www.instagram.com/farmaciapurgimon1973/?hl=es"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://www.tiktok.com/@farmacia_purgimon"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a
+                href="https://www.facebook.com/people/Farm%C3%A0cia-Purgimon/100063791270302/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://wa.me/34616020580"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.376233419235!2d1.4562016753268265!3d42.35582053537064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5edc6126166e1%3A0x6221596b4e499cb3!2sFarm%C3%A0cia%20Purgimon!5e0!3m2!1ses!2ses!4v1697287989082!5m2!1ses!2ses"
+          width="250"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

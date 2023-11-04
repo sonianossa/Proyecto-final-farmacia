@@ -1,0 +1,2454 @@
+@font-face {
+  font-family: Nunito;
+  src: url("../fonts/Nunito/Nunito-VariableFont_wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Nunito;
+  box-sizing: border-box;
+}
+/*---------------------------Inicio de todo el header, navbar y scroll indicador-----------------*/
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.864);
+  margin-top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 80; /*Es necesario el z-index 80 para el header ya que este al tener una posicion fija hace que los
+  demas elementos se sobrepongan en el con esto se evita eso y poner valores menores a otros elementos haciendo
+  que quizas no funcionen propiedades en la pagina */
+}
+.header__logoFarmacia {
+  width: 21.5rem;
+  height: 6rem;
+  padding-left: 2rem;
+  transition: 0.3s; /*Se agrega esta transicion para que al momento de realizar el hover en el logo
+    para que su duración sea de 3s en total y asi tambien se perciba que el 
+    cambio al hover no es tan súbito y se realice mejor*/
+}
+.header__logoFarmacia:hover {
+  width: 22rem;
+  height: 7rem;
+}
+.header__menuNavegacion {
+  list-style: none;
+  display: flex;
+  padding-top: 0.5rem;
+}
+.header__menuNavegacion__elemento {
+  padding: 1.4rem;
+}
+.header__menuNavegacion__elemento--texto {
+  padding: 1.4rem;
+  transition: 0.3s;
+  font-size: 1.7rem;
+  color: #424242;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+}
+.header__menuNavegacion__elemento--texto::after {
+  content: "";
+  position: absolute;
+  top: 3.8rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.2rem;
+  width: 100%;
+  background: #5c8736;
+  transform-origin: right; /*Que modifique su cordenada original que es la derecha por la izquierda
+  al momento de realizar el hover*/
+  transform: scaleX(0); /*Que escale en la animación sobre su eje X*/
+  transition: transform 0.3s ease-in-out;
+}
+.header__menuNavegacion__elemento--texto:hover:after {
+  transform-origin: left; /*Que la animación comience en la izquierda*/
+  transform: scaleX(1); /*Que escale en la animación sobre su eje X*/
+}
+.header__menuNavegacion__elemento--texto:hover {
+  font-size: 1.9rem;
+}
+.boton__hamburguerIcon {
+  display: none;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.boton__hamburguerIcon span {
+  display: block;
+  background-color: #5e5e5e;
+  height: 0.18rem;
+  width: 1.7rem;
+  margin: 0.625rem auto;
+  border: 2px;
+}
+.container__indicador {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #5e5e5e;
+  z-index: 1;
+  position: fixed;
+}
+.indicador__progreso {
+  width: 0;
+  height: 0.5rem;
+  background-color: #b9e98f;
+}
+
+/*----------------------------------------Inicio HeroImage-----------------------------------------------------------*/
+
+.contenido__heroImage {
+  display: flex;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../img/portadaequipo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /*Para el heroImage se agrega la transición a todas las propiedades tardando 1s
+asimismo que la transicion empiece y termine de manera lenta; en la animación se coloca
+el nombre del identifier del keyframes que es lo que permite que se ejecute la animación con
+cambio de 7s por imagen siendo infinito y con una velocidad linear*/
+  transition: all 1s ease-in-out;
+  animation: contenido__heroImage 21s infinite linear;
+}
+/*Keyframes del heroImage con cambio de tres imagenes ocupando cada una un porcentaje de 33%
+que es lo uqe se ejecuta conjunto a la animación y transicion 
+aplicadas a la clase contenido__heroImage*/
+@keyframes contenido__heroImage {
+  0% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("../img/portadaequipo.jpg");
+  }
+  33% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("../img/portadaequipo.jpg");
+  }
+  34% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("../img/portadafarmacia1.jpg");
+  }
+  66% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("../img/portadafarmacia1.jpg");
+  }
+  67% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("../img/saladeespera.jpg");
+  }
+  100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("../img/saladeespera.jpg");
+  }
+}
+.contenido__heroImage__textoHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.7rem;
+  margin-top: auto;
+  height: fit-content;
+  max-width: 60rem;
+  color: #b9e98f;
+  border-radius: 2rem;
+}
+.contenido__heroImage__textoHero__titulo {
+  font-size: 2rem;
+  text-shadow: black 0.125rem 0.125rem;
+  text-align: center;
+}
+
+/*-----------------------------------------Inicio contacto informativo----------------------------------------------*/
+.contenido__contacto {
+  font-weight: 600;
+  font-size: 1.3rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acdd82d2;
+  height: 5rem;
+  gap: 3rem;
+}
+.contenido__contacto__iconos {
+  display: flex;
+  color: #2f4e15;
+  gap: 0.4rem;
+}
+.fa-solid {
+  margin: 0.3rem;
+}
+
+/*--------------------------------Inicio seccion calendario de guardias y vacaciones--------------------------------*/
+.calendario__guardias__contenedor {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  background-color: #c3d34a48;
+  border-radius: 0.5rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  padding-right: 4rem;
+}
+.calendario__guardias__card {
+  padding-top: 2.2rem;
+}
+.calendario__guardias__titulo {
+  font-size: 2rem;
+  color: #1c2d0e;
+  padding-top: 2rem;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  padding-bottom: 2.8rem;
+}
+.calendario__guardias__texto__numero {
+  color: #a3a3a5;
+  font-size: 2rem;
+}
+.calendario__guardias__texto__mes {
+  color: #5c8736;
+  font-size: 2rem;
+}
+.calendario__guardias__texto {
+  display: flex;
+  gap: 0.4rem;
+  padding-left: 12rem;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+.calendario__guardias__texto__imagen {
+  padding-left: 6rem;
+  width: 30rem;
+  height: 13rem;
+  padding-right: 3rem;
+}
+
+.calendario__guardias__vacaciones--texto {
+  font-size: 2rem;
+  color: #5c8736;
+  padding-top: 1.5rem;
+  padding-left: 12rem;
+}
+.calendario__guardias__vacaciones__año--texto {
+  color: #a3a3a5;
+}
+.calendario__guardias__vacaciones__numero--texto {
+  color: #5c8736;
+}
+.calendario__guardias__vacaciones__año {
+  padding-left: 8rem;
+  font-size: 1.3rem;
+  border-right: 2px solid #1c2d0e;
+  padding-right: 1rem;
+}
+.calendario__guardias__vacaciones__fecha {
+  display: flex;
+  padding-top: 1rem;
+}
+.calendario__guardias__vacaciones__fechas {
+  padding-left: 1rem;
+  font-size: 1.3rem;
+}
+.calendario__guardias__vacaciones__tituloGuardias {
+  font-size: 2rem;
+  color: #395620;
+  padding-top: 1.3rem;
+  padding-left: 6rem;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+}
+.calendario__guardias__vacaciones__farmaceuticos {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  padding-left: 0.5rem;
+  width: fit-content;
+  flex-wrap: wrap;
+}
+.calendario__guardias__vacaciones__purgi {
+  font-size: 1.3rem;
+  background-color: #bbd04f;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__vacaciones__guilan {
+  font-size: 1.3rem;
+  background-color: #f4adcb;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__vacaciones__bar {
+  font-size: 1.3rem;
+  background-color: #fdba02;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__vacaciones__peru {
+  font-size: 1.3rem;
+  background-color: #bfe3f7;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__vacaciones__marsin {
+  font-size: 1.3rem;
+  background-color: #feef1b;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__vacaciones__boton--texto {
+  text-decoration: none;
+  color: #1c2d0e;
+  text-shadow: #a3a3a5 1px 1px;
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 15rem;
+  flex-wrap: wrap;
+  border-color: #c3d34ab5;
+  text-align: center;
+  align-items: center;
+  font-size: 1.7rem;
+  background-color: #c3d34ab5;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  width: fit-content;
+}
+.calendario__guardias__vacaciones__boton--texto:hover {
+  border-radius: 1rem;
+}
+/*----------------------------Inicio de tarjeta de fidelización----------------------------------------- */
+.tarjeta__fidelizacion__contenedor {
+  display: flex;
+  padding: 3rem;
+  justify-content: space-evenly;
+  margin-top: 4rem;
+}
+.tarjeta__fidelizacion__texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.tarjeta__fidelizacion__titulo {
+  color: #1c2d0e;
+  padding-top: 0;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  font-size: 2rem;
+}
+.tarjeta__fidelizacion__lista--texto {
+  font-size: 1.3rem;
+  list-style: none;
+  line-height: 1.9rem;
+}
+.tarjeta__fidelizacion__imagen {
+  width: 35%;
+  height: 36%;
+  margin-left: 5rem;
+  border-radius: 1.5rem;
+  box-shadow: #5c8736 6px 6px;
+  transition: 1s; /* Se agrega una transicion a la imagen de un segundo para que al realizar el hover en la imagen 
+  se vea una efecto de movimiento en el texto pero el hover se realiza en la imagen solo que no se nota en la imagen
+  debido a las dimensiones de la misma en el contenedor mientras que el texto tiene dimensiones mas reducidas por 
+  lo cual se nota el cambio*/
+}
+.tarjeta__fidelizacion__imagen:hover {
+  margin-bottom: 1.5rem;
+}
+/*-----------------------------------------Inicio seccion servicios concertados-----------------------------------------*/
+.servicios__concertados__titulo {
+  font-size: 2rem;
+  color: #1c2d0e;
+  padding-top: 2rem;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  padding-bottom: 2.8rem;
+} /*--------------------------------cards servicios concertados-------------------------------------------------------*/
+.servicios__concertados__contenedor {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 4rem;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  box-shadow: 0 0 1rem #5c8736;
+}
+.servicios__concertados__contenedor--texto {
+  padding-right: 1rem;
+  margin-top: 4rem;
+}
+.servicios__concertados__subtitulo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1c2d0e;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  padding-bottom: 0.5rem;
+}
+.servicios__concertados__parrafo {
+  font-size: 1.3rem;
+  color: #2a2a2a;
+}
+.servicios__concertados__imagen {
+  width: 35%;
+  margin-left: 1rem;
+  min-height: 100%;
+  border-radius: 0.5rem;
+  filter: saturate(
+    0.6
+  ); /*aplico la saturación ya que el verde de la imagen original no se ajusta muy bien a la 
+  paleta de colores planteada*/
+}
+.servicios__concertados__contenedor.servicios__izquierda {
+  left: 0;
+}
+.servicios__concertados__contenedor.servicios__derecha {
+  position: relative;
+  left: 40%;
+}
+/*-------------------------------------Inicio Reseñas de usuarios sobre la farmacia---------------------------------*/
+.reseñas__titulo {
+  font-size: 2rem;
+  color: #1c2d0e;
+  padding-top: 2rem;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.reseñas__contenedor {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 5rem 3rem 5rem;
+  gap: 2rem;
+}
+.reseñas__contenedor__texto {
+  background-color: #b9e98fa7;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: fit-content; /*con fit-content el contenedor de texto no va a ocupar mas del espacio que tiene disponible*/
+  height: fit-content;
+  box-shadow: 2px 2px 15px rgb(194, 235, 141);
+}
+.reseñas__contenedor__texto--titulo {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  color: #2b2b2b;
+}
+.reseñas__contenedor__texto--parrafo {
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+}
+.reseñas__contenedor__perfil {
+  background-color: #5c8736;
+  border-radius: 28rem;
+  width: 3rem;
+  display: inline-flex; /*Se coloca esta propiedad para que el perfil ni se ajuste a todo 
+  el ancho del  contenedor div principal y se pueda centrar*/
+  justify-content: center;
+  line-height: 3rem;
+}
+.reseñas__contenedor__perfil1 {
+  background-color: #fdba02;
+  border-radius: 28rem;
+  width: 3rem;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 3rem;
+}
+.reseñas__contenedor__perfil2 {
+  background-color: #f4adcb;
+  border-radius: 28rem;
+  width: 3rem;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 3rem;
+}
+.reseñas__contenedor__perfil3 {
+  background-color: #bfe3f7;
+  border-radius: 28rem;
+  width: 3rem;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 3rem;
+}
+
+/*--------------------------------------Inicio footer----------------------------------------------------------------*/
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem 0 2rem 0;
+  flex-wrap: wrap;
+}
+.footer__contenedor__texto {
+  display: block;
+  line-height: 2.5rem;
+}
+.footer__copy {
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  color: #2b2b2b;
+  margin-left: 6rem;
+}
+.footer__texto__lista {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.7rem;
+  margin-left: 8rem;
+}
+.fa-brands {
+  font-size: 1.5rem;
+  color: #5c8736;
+}
+.footer__map {
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 0.5rem;
+}
+/*----------------------------------------------Html del boton calendario-----------------------------------------*/
+.calendario__titulo {
+  font-size: 2rem;
+  color: #1c2d0e;
+  padding-top: 8rem;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  padding-bottom: 1rem;
+}
+.calendario__guardias__vacaciones__tituloGuardias2 {
+  font-size: 2rem;
+  color: #395620;
+  padding-top: 1rem;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+}
+.calendario__guardias__vacaciones__farmaceuticos2 {
+  list-style: none;
+  font-size: 1.3rem;
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  text-align: center;
+  padding-left: 14rem;
+  flex-wrap: wrap;
+}
+.calendario__guardias__vacaciones__purgi2 {
+  background-color: #bbd04f;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__vacaciones__guilan2 {
+  background-color: #f4adcb;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__vacaciones__bar2 {
+  background-color: #fdba02;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__vacaciones__peru2 {
+  background-color: #bfe3f7;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__vacaciones__marsin2 {
+  background-color: #feef1b;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+.calendario__guardias__texto__numero2 {
+  color: #a3a3a5;
+  font-size: 2rem;
+}
+.calendario__guardias__texto__mes2 {
+  color: #5c8736;
+  font-size: 2rem;
+}
+.calendario__guardias__texto2 {
+  display: flex;
+  gap: 0.4rem;
+  padding-left: 7rem;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+.calendario__guardias__contenido {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+.calendario__guardias__texto__imagen2 {
+  width: 23rem;
+  height: 14rem;
+}
+/*----------------------------------------------Html ventana de cards servicios-----------------------------------------*/
+.servicios__contenedor {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.servicios__card {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 1rem;
+  box-shadow: 2px 2px 18px rgb(194, 235, 141);
+  border-radius: 0.3rem;
+}
+.servicios__titulo {
+  font-size: 2rem;
+  color: #1c2d0e;
+  padding-top: 7rem;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #85ad61;
+  padding-bottom: 1rem;
+}
+.servicios__titulo__card {
+  color: #424242;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+.servicios__texto__card {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  padding-bottom: 1rem;
+}
+.servicios__ortopedia__imagen {
+  width: 15rem;
+  height: 14.5rem;
+  padding: 1rem;
+  filter: saturate(0.6);
+}
+.servicios__ortopedia__imagen:hover {
+  width: 17rem;
+  height: 16.5rem;
+}
+.servicios__dermocosmetica__imagen {
+  width: 15rem;
+  height: 14.5rem;
+  padding: 1rem;
+  filter: saturate(0.6);
+}
+.servicios__dermocosmetica__imagen:hover {
+  width: 17rem;
+  height: 16.5rem;
+}
+.servicios__fitoterapia__imagen {
+  width: 15rem;
+  height: 14.5rem;
+  padding: 1rem;
+  filter: saturate(0.6);
+}
+.servicios__fitoterapia__imagen:hover {
+  width: 17rem;
+  height: 16.5rem;
+}
+/*-------------------------------------------------Html ventana de Equipo-----------------------------------------------------------------*/
+.farmaceuticos__contenedor {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.equipo__contenedor__texto {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3rem;
+}
+.equipo__titulo {
+  font-size: 2rem;
+  color: #1c2d0e;
+  padding-top: 8rem;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  padding-bottom: 1rem;
+}
+.equipo__titulo__personal {
+  font-size: 2rem;
+  color: #1c2d0e;
+  padding-top: 3rem;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  padding-bottom: 1rem;
+}
+.equipo__imagenPrincipal {
+  width: 40rem;
+  border-radius: 0.8rem;
+  box-shadow: 2px 2px 18px #5c8736;
+  margin-right: 2rem;
+}
+.equipo__parrafo {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #1c2d0e;
+}
+.equipo__parrafo__farmaceuticos {
+  font-size: 1.3rem;
+}
+.equipo__farmaceuticos__contenedor {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  box-shadow: 0 0 0.5rem #5c8736;
+  background: linear-gradient(to bottom right, #b0e285, white, white);
+}
+.equipo__farmaceuticos__contenedor:hover {
+  background: linear-gradient(to bottom left, #b0e285, white, white);
+}
+.equipo__contenedor--texto {
+  padding-right: 1rem;
+  margin-top: 1.5rem;
+}
+.equipo__contenedor__texto {
+  padding-right: 1rem;
+}
+.equipo__imagen__farmaceuticos {
+  width: 35%;
+  margin-left: 2rem;
+  min-height: 100%;
+  border-radius: 0.5rem;
+}
+/*Es necesario realizar la media de estas medidas de pantalla ya que el texto con la imagen se ajustan mejor con 
+diferentes medidas en pantalla*/
+@media screen and (min-width: 1116px) and (max-width: 1400px) {
+  .equipo__imagenPrincipal {
+    margin-right: 8rem;
+  }
+  .equipo__parrafo {
+    margin-left: 5rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+  }
+}
+/*----------------------------------------------Html ventana de historia - linea temporal-----------------------------------------*/
+
+.historia__titulo {
+  font-size: 2rem;
+  color: #1c2d0e;
+  padding-top: 8rem;
+  text-align: center;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  padding-bottom: 1rem;
+}
+.historia__subtitulo {
+  font-size: 2rem;
+  color: #5c8736;
+  text-align: left;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+}
+.linea__temporal__titulo__texto {
+  color: #1c2d0e;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+}
+.linea__temporal__parrafo {
+  color: #1c2d0e;
+  font-size: 1.3rem;
+}
+
+.linea__temporal {
+  position: relative;
+  max-width: 75rem;
+  margin: 4rem auto;
+}
+.linea__temporal__contenedor {
+  padding: 0.625rem 3.125rem;
+  position: relative;
+  width: 50%;
+  animation: desplazamientoAbajo 1s linear forwards;
+  /*se coloca la animación en forwards para cuando la animación comience
+  al terminar quede en ese estado y no vuelva a comenzar a menos que se recargue la pagina*/
+  opacity: 0; /*La opacidad se empieza en 0 sea totalmente transparente al momento de realizar la animación */
+}
+@keyframes desplazamientoAbajo {
+  0% {
+    opacity: 1;
+    transform: translateY(-1.8rem);
+  } /*con el transform se transladara o desplazara en el eje Y es decir hacia abajo al recargar la pagina -1.8rem 
+  y al completar el 100% del contenedor el translateY estara en 0 */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.linea__temporal__contenedor:nth-child(1) {
+  /*En este caso se selecciona todos los clase linea__temporal__contenedor
+  que sean el primer hijo de un elemento en este caso se repite 14 veces
+   en este caso ese elemento es el div con clase linea__temporal__contenedor--texto*/
+  animation-delay: 0s; /*el animation delay es el tiempo que se demora en comenzar animación una vez aplicada en el 
+  primer caso no se retrasa porque es el primer elemento se muestra apartir del segundo hijo se tardara 1s en aparecer
+  cada uno sucesivamente hasta llegar al ultimo 
+  */
+}
+.linea__temporal__contenedor:nth-child(2) {
+  animation-delay: 1s;
+}
+.linea__temporal__contenedor:nth-child(3) {
+  animation-delay: 2s;
+}
+.linea__temporal__contenedor:nth-child(4) {
+  animation-delay: 3s;
+}
+.linea__temporal__contenedor:nth-child(5) {
+  animation-delay: 4s;
+}
+.linea__temporal__contenedor:nth-child(6) {
+  animation-delay: 5s;
+}
+.linea__temporal__contenedor:nth-child(6) {
+  animation-delay: 5s;
+}
+.linea__temporal__contenedor:nth-child(7) {
+  animation-delay: 6s;
+}
+.linea__temporal__contenedor:nth-child(8) {
+  animation-delay: 7s;
+}
+.linea__temporal__contenedor:nth-child(9) {
+  animation-delay: 8s;
+}
+.linea__temporal__contenedor:nth-child(10) {
+  animation-delay: 9s;
+}
+.linea__temporal__contenedor:nth-child(11) {
+  animation-delay: 10s;
+}
+.linea__temporal__contenedor:nth-child(12) {
+  animation-delay: 11s;
+}
+.linea__temporal__contenedor:nth-child(13) {
+  animation-delay: 12s;
+}
+.linea__temporal__contenedor:nth-child(14) {
+  animation-delay: 13s;
+}
+
+.linea__temporal__contenedor--texto {
+  padding: 1.25rem 1.875rem;
+  background-color: #b7e192;
+  position: relative;
+  border-radius: 0.375rem;
+}
+.contenedor__izquierdo {
+  left: 0; /*se coloca el left cero para no mover el contenedor */
+}
+.contenedor__derecho {
+  left: 50%; /*se desplaza todos los contenedores con la clase derecho al lado se desplazan un 50% del lado izquierdo al derecho*/
+  width: fit-content;
+}
+.contenedor__derecho .linea__temporal__imagen {
+  left: -1.75rem; /*Se corren las imagenes de los logos
+  del contenedor derecho al lado izquierdo del contenedor de clase derecho*/
+}
+.linea__temporal__imagen {
+  position: absolute;
+  width: 3rem;
+  height: auto;
+  border-radius: 1.5rem;
+  right: -1.25rem;
+  top: 2rem;
+}
+.linea__temporal__imagen2 {
+  margin: 1rem;
+  width: 18.25rem;
+  height: 14.1875rem;
+  border-radius: 0.8rem;
+  box-shadow: 2px 2px 18px #5e5e5e;
+}
+.linea__temporal::after {
+  content: ""; /*Esto es un contenido sin nada dentro de el que se coloca el Pseudo-elemento after porque se va a 
+  crear un columna sin contenido despues de la clase linea temporal con posicion absolute tomando como referencia 
+  la primera posición relativa de la linea temporal*/
+  position: absolute;
+  width: 0.5rem;
+  height: 100%;
+  background-color: #5c8736;
+  top: 0; /*hasta este punto la columna creada aparece al lado izquierdo de la pagina por que que para desplazarla 
+  a la mitad se colocara de se desplace un 50% del lado izquierdo*/
+  z-index: -1; /*Colocara la columna creada por detras de la imagen del logo sino se coloca
+  se sobre pone a la imagen del logo*/
+  left: 50%;
+  margin-left: -0.1875rem;
+  animation: animacionLinea 6s linear forwards; /*se coloca la animación en forwards para cuando la animación comience
+  al terminar quede en ese estado y no vuelva a comenzar a menos que se recargue la pagina*/
+}
+@keyframes animacionLinea {
+  0% {
+    height: 0;
+  } /*Empieza el keyframes y animacion en una altura de 0 por lo que pasados 6s va a completar su transición y su 
+  altura estara completa en un 100%*/
+  100% {
+    height: 100%;
+  }
+}
+.linea__temporal__fechas {
+  display: inline-block; /*esto se hace para que el elemento fechas aparezca uno debajo del oto y aparezcan de manera 
+  normal desde la esquina superior izquierda del contenedor donde se encuentre*/
+  margin-bottom: 0.8rem;
+}
+.contenedor__izquierdo__flecha {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 1.75rem;
+  z-index: 1;
+  border-top: 0.93rem solid transparent; /*se colocan en tranparent para que formen solo con el border left la flecha*/
+  border-bottom: 0.93rem solid transparent;
+  border-left: 0.93rem solid #b7e192; /*aparece en el lado izquierdo del contenedor span*/
+  right: -0.9rem;
+}
+.contenedor__derecho__flecha {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 1.75rem;
+  z-index: 1;
+  border-top: 0.93rem solid transparent; /*se colocan en tranparent para que formen solo con el border left la flecha*/
+  border-bottom: 0.93rem solid transparent;
+  border-right: 0.93rem solid #b7e192;
+  left: -0.9rem; /*desplazamiento al lado izquiero del contenedor .linea__temporal__contenedor--texto*/
+}
+
+/*----------------------------------------------Html ventana de Ortopedia-----------------------------------------*/
+.contenido__heroImage__ortopedia {
+  display: flex;
+  height: 88vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../img/heroimageortopedia.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.ortopedia__titulo {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acdd82d2;
+  height: 5rem;
+  color: #1c2d0e;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+}
+.contenido__ortopedia {
+  display: flex;
+  padding: 3rem;
+  justify-content: space-evenly;
+  margin-top: 0;
+  background: linear-gradient(to bottom right, #b9e98f, white, white, #b9e98f);
+}
+.ortopedia__parrafo {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 50%;
+  justify-content: center;
+  margin-right: 4.5rem;
+  color: #1c2d0e;
+}
+.ortopedia__imagen {
+  width: 40%;
+  border-radius: 0.8rem;
+  box-shadow: 2px 2px 18px rgb(194, 235, 141);
+}
+.ortopedia__catalogo__titulo {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 5rem;
+  color: #1c2d0e;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  background: linear-gradient(to bottom right, #b9e98f, white, white, white);
+}
+/*-------------------------------------------------Overlay Html Ortopedia------------------------------------------*/
+.contenedor__overlay__ortopedia {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: linear-gradient(to bottom left, #b9e98f, white, white, #b9e98f);
+}
+.contenedor__overlay {
+  position: relative; /* se coloca una posicion relativa para que tome su posicion original pero se pueda desplazar
+  sin ningun problema*/
+}
+.imagen__overlay {
+  display: block;
+  width: 17rem;
+  height: 15rem;
+  border-radius: 0.9rem;
+  margin: 1rem;
+}
+.overlay__ortopedia {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #96c36fc6;
+  overflow: hidden; /*El hidden permite que el div que contiene el div del texto se oculte y aparezca cuando se coloca
+  el indicador del mouse para realizar el hover*/
+  width: 17rem;
+  height: 15rem;
+  transform: scale(0);
+  transition: 0.2s ease-in; /*la transicion sera de dos segundo entrando de una manera mas lenta*/
+  border-radius: 0.9rem;
+  margin: 1rem;
+}
+.contenedor__overlay:hover .overlay__ortopedia {
+  transform: scale(
+    1
+  ); /*Escalara su tamaño a 1 a la imagen__overlay cuando se realice el hover*/
+}
+.texto__overlay {
+  font-size: 1.3rem;
+  color: #1c2d0e;
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/*--------------------------------------------------cards ortopedia---------------------------------------------------------------*/
+.catalogo__ortopedia {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.catalogo__card {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 1rem;
+  box-shadow: 2px 2px 18px rgb(194, 235, 141);
+  border-radius: 0.3rem;
+}
+.catalogo__titulo__card {
+  color: #424242;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+.catalogo__texto__card {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  padding-bottom: 1rem;
+}
+.catalogo__imagen {
+  width: 16rem;
+  height: 17.8rem;
+  padding: 1rem;
+}
+/*----------------------------------------------Html ventana de dermocosmetica-----------------------------------------*/
+.contenido__heroImage__dermocosmetica {
+  display: flex;
+  height: 88vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../img/heroimagedermocosmetica.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.dermocosmetica__titulo {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acdd82d2;
+  height: 5rem;
+  color: #1c2d0e;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+}
+.contenido__dermocosmetica {
+  display: flex;
+  padding: 3rem;
+  justify-content: space-evenly;
+  margin-top: 0;
+  background: linear-gradient(to bottom right, #b9e98f, white, white, #b9e98f);
+}
+.dermocosmetica__parrafo {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 50%;
+  justify-content: center;
+  margin-right: 4.5rem;
+  color: #1c2d0e;
+}
+.dermocosmetica__imagen {
+  width: 40%;
+  border-radius: 0.8rem;
+  box-shadow: 2px 2px 18px #2f4e15;
+}
+.dermocosmetica__marcas__titulo {
+  font-size: 2rem;
+  display: flex;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  color: #1c2d0e;
+  background-color: #96c36f;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem rgb(179, 255, 172);
+  box-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+}
+.servicios__acordeon {
+  background-color: #96c36f;
+  font-weight: bold;
+  color: #1c2d0e;
+  padding: 1.1rem;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 1.7rem;
+  transition: 0.4s;
+}
+.dermocosmetica__imagen2 {
+  width: 30%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 18px rgb(194, 235, 141);
+}
+.activo,
+.servicios__acordeon:hover {
+  background-color: #5c8736; /*Solo se hace hover cuando tenga la clase activo y se dara el evento en JavaScript*/
+  color: #ccf0ad;
+}
+.dermocosmetica__texto {
+  color: #1c2d0e;
+  font-size: 1.3rem;
+  padding-top: 1rem;
+  line-height: normal;
+}
+.dermocosmetica__panel {
+  padding: 0 1.3rem;
+  display: none;
+  overflow: hidden; /*esto hace que el contenido se oculte cuando realizamos el click al acordeon*/
+  background-color: #b9e98f;
+  text-align: center;
+}
+
+/*----------------------------------------------Html ventana de fitoterapia-----------------------------------------*/
+.contenido__heroImage__fitoterapia {
+  display: flex;
+  height: 88vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../img/heroimagefitoterapia.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.fitoterapia__titulo {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acdd82d2;
+  height: 5rem;
+  color: #1c2d0e;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+}
+.contenido__fitoterapia {
+  display: flex;
+  padding: 3rem;
+  justify-content: space-evenly;
+  margin-top: 0;
+  background: linear-gradient(to bottom right, #b9e98f, white, white, #b9e98f);
+}
+.fitoterapia__parrafo {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 50%;
+  justify-content: center;
+  margin-right: 4.5rem;
+  color: #1c2d0e;
+}
+.fitoterapia__imagen {
+  width: 40%;
+  border-radius: 0.8rem;
+  box-shadow: 2px 2px 18px #2f4e15;
+}
+.fitoterapia__marcas__titulo {
+  font-size: 2rem;
+  display: flex;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  color: #1c2d0e;
+  background-color: #96c36f;
+  box-shadow: 0.0625rem 0.0625rem 0.125rem #96c36f;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem rgb(179, 255, 172);
+}
+.servicios__acordeon {
+  background-color: #96c36f;
+  font-weight: bold;
+  color: #1c2d0e;
+  padding: 1.1rem;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 1.7rem;
+  transition: 0.4s;
+}
+.fitoterapia__imagen2 {
+  width: 30%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 18px rgb(194, 235, 141);
+}
+.activo,
+.servicios__acordeon:hover {
+  background-color: #5c8736; /*Solo se hace hover cuando tenga la clase activo y se dara el evento en JavaScript*/
+  color: #ccf0ad;
+}
+.fitoterapia__texto {
+  color: #1c2d0e;
+  font-size: 1.3rem;
+  padding-top: 1rem;
+  line-height: normal;
+}
+.fitoterapia__panel {
+  padding: 0 1.3rem;
+  display: none;
+  overflow: hidden; /*esto hace que el contenido se oculte cuando realizamos el click al acordeon*/
+  background-color: #b9e98f;
+  text-align: center;
+}
+/*--------------------------------------------------Inicio bottom scroll top-------------------------------------------------------*/
+.boton__top {
+  display: none;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2rem;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background-color: #85ad61;
+  cursor: pointer;
+  padding: 0.8rem;
+  border-radius: 1.7rem;
+  transition: background-color 1s; /*la transicion hace que el hover se realice de una manera mas suave a lo normal 
+  tardando 1s en realizarse*/
+}
+.boton__top:hover {
+  background-color: #5c8736;
+}
+.fa-solid.fa-sort-up {
+  color: #1c2d0e;
+  font-size: 2rem;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------Responsive en dispositivo tablet-----------------------------------------*/
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  /*Header responsive tablet*/
+  .header__logoFarmacia {
+    padding-top: 1.5rem;
+    width: 14rem;
+    height: 5.5rem;
+  }
+  .boton__hamburguerIcon {
+    display: block;
+    position: absolute;
+    top: 1.9375rem;
+    right: 1.5625rem;
+    transition: 0.2s 0.1s;
+  }
+  .boton__hamburguerIcon:hover {
+    transform: rotate(
+      360deg
+    ); /*Esta funcion lo que realiza es que cuando se establezca el hover el boton hamburguerIcon
+        con todos los span adentro de un efecto de giro de 360 grados*/
+  }
+  .header {
+    flex-direction: column;
+    padding-bottom: 1.5625rem;
+    background-color: rgba(255, 255, 255, 0.864);
+    padding-right: 0;
+  }
+  .header__menuNavegacion {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: none;
+    opacity: 0;
+  }
+  .header__menuNavegacion__elemento--texto {
+    text-align: center;
+  }
+  /*Este keyframe empieza con la animacion en opacity 0 y finaliza en 1 para no tener una opacidad muy alta y
+   repentina a la vista del usuario en donde se aplica que es la transicion en el despliegue del menu hamburguesa 
+   con clase activado tambien se coloca una animacion ease-in-out both para que en ambos sentidos la transición del
+   despliegue y cierre del header___menuNavegacion sea lenta en ambos sentidos*/
+  @keyframes muestraMenu {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .header__menuNavegacion.activado {
+    display: flex;
+    animation: muestraMenu 350ms ease-in-out both;
+  }
+  /*la clase animado en el keyframes seda para la rotacion correcta de la barra 1 y 3 para formar la X por eso 
+   se da una opacity de 0 en la barra 2 que es la del medio para que no aparezca en la activacion en javascript 
+   de la clase animado sedan simbolos negativos y positivos de los grados ya que giran conforme a las manesillas 
+   del reloj*/
+  span.barra1.animado {
+    transform: rotate(-45deg) translate(-10px, 8px);
+  }
+  span.barra2.animado {
+    opacity: 0;
+  }
+  span.barra3.animado {
+    transform: rotate(45deg) translate(-10px, -8px);
+  }
+  /*---------------------------------------HeroImage responsive tablet---------------------------------------------*/
+  .contenido__heroImage__textoHero__titulo {
+    font-size: 1.5rem;
+  }
+  /*--------------------------------Inicio seccion calendario de guardias y vacaciones responsive tablet---------------*/
+  .calendario__guardias__contenedor {
+    flex-wrap: wrap;
+    text-align: center;
+    height: fit-content;
+    padding-right: 0;
+  }
+  .calendario__guardias__texto {
+    padding-left: 11rem;
+  }
+  .calendario__guardias__texto__imagen {
+    padding-left: 2rem;
+  }
+  .calendario__guardias__vacaciones--texto {
+    padding-left: 4rem;
+  }
+  .calendario__guardias__vacaciones__fecha {
+    padding-left: 3rem;
+  }
+  .calendario__guardias__vacaciones__tituloGuardias {
+    padding-left: 1rem;
+  }
+  .calendario__guardias__vacaciones__farmaceuticos {
+    padding-left: 1rem;
+  }
+  .calendario__guardias__vacaciones__boton--texto {
+    margin-left: 18rem;
+  }
+  /*----------------------------Inicio tarjeta fidelización responsive tablet--------------------------------*/
+  .tarjeta__fidelizacion__contenedor {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  .tarjeta__fidelizacion__titulo {
+    padding-top: 2.5rem;
+    padding-left: 2rem;
+  }
+  .tarjeta__fidelizacion__lista--texto {
+    padding-left: 2rem;
+  }
+  .tarjeta__fidelizacion__imagen {
+    width: 45%;
+    height: auto;
+    margin-left: 0;
+  }
+  .tarjeta__fidelizacion__texto {
+    align-items: baseline;
+    width: 100%;
+  }
+  /*------------------------Inicio servicios concertados responsive tablet-------------------------------------------*/
+  .servicios__concertados__contenedor {
+    flex-direction: column-reverse; /*el column reverse se proporciona en este caso ya que si se coloca flex
+  direction la imagen aparece abajo del texto del contenedor para que aparezca arriba toca revertirlo aplicando esta 
+  propiedad*/
+    align-items: center;
+  }
+  .servicios__concertados__contenedor--texto {
+    margin-top: 2rem;
+  }
+  .servicios__concertados__imagen {
+    width: 42%;
+  }
+  .servicios__concertados__contenedor.servicios__derecha {
+    left: 30%;
+  }
+  /*----------------------------------------------------Html ventana de Equipo tablet---------------------------------------------------------------*/
+  .equipo__contenedor__texto {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .equipo__imagenPrincipal {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+  .equipo__parrafo {
+    margin-left: 4rem;
+  }
+  .equipo__farmaceuticos__contenedor {
+    width: 54%;
+    height: fit-content;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .equipo__contenedor--texto {
+    padding-right: 0;
+    margin-top: 1rem;
+  }
+  .equipo__imagen__farmaceuticos {
+    width: 11rem;
+    height: 11rem;
+    margin-left: 0;
+  }
+  /*-------------------------------------Inicio Reseñas de usuarios sobre la farmacia tablet---------------------------------*/
+  .reseñas__contenedor {
+    flex-wrap: wrap;
+  }
+  /*----------------------------------------------- Inicio footer tablet-------------------------------------------*/
+  .footer__copy {
+    margin-left: 3rem;
+  }
+  .footer__texto__lista {
+    margin-left: 6rem;
+  }
+  /*----------------------------------------------Html del boton calendario tablet-----------------------------------------*/
+  .calendario__guardias__vacaciones__farmaceuticos2 {
+    padding-left: 5.7rem;
+  }
+  /*----------------------------------------------Html ventana de servicios cards tablet-----------------------------------------*/
+  .servicios__contenedor {
+    flex-wrap: wrap;
+    gap: 1.7rem;
+  }
+
+  /*----------------------------------------------Html ventana de historia - linea temporal tablet-----------------------------------------*/
+  .linea__temporal {
+    margin: 3.125rem auto;
+  }
+  .linea__temporal::after {
+    left: 1.9375rem;
+  }
+  .linea__temporal__contenedor {
+    width: 100%;
+    padding-left: 5rem;
+    padding-right: 1.5625rem;
+  }
+  .contenedor__derecho {
+    left: 0;
+  }
+  .linea__temporal__imagen {
+    left: 0.625rem;
+  }
+  .contenedor__derecho .linea__temporal__imagen {
+    left: 0.75rem;
+  }
+  .contenedor__derecho__flecha {
+    border-right: 0.9375rem solid #b7e192;
+    border-left: 0;
+    left: -0.9375rem;
+  }
+  .contenedor__izquierdo__flecha {
+    border-right: 0.9375rem solid#b7e192;
+    border-left: 0;
+    left: -0.9375rem;
+  }
+
+  /*---------------------------------------------------Html ventana ortopedia tablet---------------------------------*/
+  .contenido__ortopedia {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .ortopedia__imagen {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+  .ortopedia__parrafo {
+    margin-left: 5rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #1c2d0e;
+  }
+  /*----------------------------------------------Html ventana de dermocosmetica tablet-----------------------------------------*/
+  .contenido__dermocosmetica {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .dermocosmetica__imagen {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+  .dermocosmetica__parrafo {
+    margin-left: 5rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #1c2d0e;
+  }
+  /*----------------------------------------------Html ventana de fitoterapia tablet-----------------------------------------*/
+  .contenido__fitoterapia {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .fitoterapia__imagen {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+  .fitoterapia__parrafo {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 2rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #1c2d0e;
+  }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------Responsive en dispositivo mobile posición horizontal-------------------------------------------------*/
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  /*--------------------------------Header responsive mobile posición horizontal---------------------------------------------------------*/
+  .header__logoFarmacia {
+    width: 14rem;
+    height: 5.6rem;
+    padding-top: 1.5rem;
+  }
+  .header__logoFarmacia:hover {
+    width: 15rem;
+    height: 6rem;
+  }
+  .boton__hamburguerIcon {
+    display: block;
+    position: absolute;
+    top: 1.9375rem;
+    right: 1.5625rem;
+    transition: 0.2s 0.1s;
+  }
+  .boton__hamburguerIcon:hover {
+    transform: rotate(360deg);
+  }
+  .boton__hamburguerIcon span {
+    height: 0.18rem;
+    width: 1.5rem;
+    margin: 0.525rem;
+  }
+  .header {
+    flex-direction: column;
+    padding-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.864);
+    padding-right: 0;
+  }
+  .header__menuNavegacion {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: none;
+    opacity: 0;
+  }
+  .header__menuNavegacion__elemento--texto {
+    text-align: center;
+  }
+  @keyframes muestraMenu {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .header__menuNavegacion.activado {
+    display: flex;
+    animation: muestraMenu 350ms ease-in-out both;
+  }
+  span.barra1.animado {
+    transform: rotate(-45deg) translate(-8px, 8px); /*Se cambia la posicion de los pixeles para que las dos barras
+        se centren bien ya que se cambio el tamaño por el cambio a mobile*/
+  }
+  span.barra2.animado {
+    opacity: 0;
+  }
+  span.barra3.animado {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  /*---------------------------------------HeroImage responsive mobile posición horizontal---------------------------------------------*/
+  .contenido__heroImage__textoHero__titulo {
+    font-size: 1.5rem;
+  }
+  /*--------------------------------------Contacto informativo mobile posición horizontal-----------------------------------------------*/
+  .contenido__contacto {
+    flex-wrap: wrap;
+    height: fit-content;
+    gap: 1rem;
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+  }
+  /*-------------------------------Inicio seccion calendario de guardias y vacaciones mobile posición horizontal------------------------------*/
+  .calendario__guardias__contenedor {
+    flex-wrap: wrap;
+    text-align: center;
+    height: fit-content;
+    padding-right: 0;
+  }
+  .calendario__guardias__texto {
+    padding-left: 11rem;
+  }
+  .calendario__guardias__texto__imagen {
+    padding-left: 2rem;
+  }
+  .calendario__guardias__vacaciones__año {
+    padding-left: 4rem;
+  }
+  .calendario__guardias__vacaciones--texto {
+    padding-left: 4rem;
+  }
+  .calendario__guardias__vacaciones__tituloGuardias {
+    padding-left: 0.3rem;
+  }
+  .calendario__guardias__vacaciones__farmaceuticos {
+    padding-left: 2rem;
+  }
+  .calendario__guardias__vacaciones__boton--texto {
+    margin-left: 12rem;
+  }
+  /*-------------------------Inicio de tarjeta de fidelización responsive mobile posición horizontal ---------------------------*/
+  .tarjeta__fidelizacion__contenedor {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  .tarjeta__fidelizacion__titulo {
+    padding-top: 2.5rem;
+    padding-left: 2rem;
+  }
+  .tarjeta__fidelizacion__lista--texto {
+    padding-left: 2rem;
+  }
+  .tarjeta__fidelizacion__imagen {
+    width: 45%;
+    height: auto;
+    margin-left: 0;
+  }
+  .tarjeta__fidelizacion__texto {
+    align-items: baseline;
+    width: 100%;
+  }
+  /*------------------------Inicio servicios concertados responsive mobile posición horizontal-------------------------------------------*/
+  .servicios__concertados__contenedor {
+    flex-direction: column-reverse; /*el column reverse se proporsiona en este caso ya que si se coloca flex
+  direction la imagen aparece abajo del texto del contenedor para que aparezca arriba toca revertirlo aplicando esta funcion*/
+    align-items: center;
+  }
+  .servicios__concertados__contenedor--texto {
+    margin-top: 2rem;
+  }
+  .servicios__concertados__imagen {
+    width: 42%;
+  }
+  .servicios__concertados__contenedor.servicios__derecha {
+    left: 30%;
+  }
+
+  /*----------------------------Inicio Reseñas de usuarios sobre la farmacia mobile posición horizontal---------------------------------*/
+  .reseñas__contenedor {
+    flex-wrap: wrap;
+  }
+  /*-------------------------------------------------Inicio footer mobile posición horizontal-----------------------------------------*/
+  .footer__copy {
+    margin-left: 3rem;
+  }
+  .footer__texto__lista {
+    margin-left: 6rem;
+  }
+  /*----------------------------------------------Html del boton calendario mobile posición horizontal-----------------------------------------*/
+  .calendario__guardias__vacaciones__farmaceuticos2 {
+    padding-left: 4rem;
+    flex-wrap: wrap;
+  }
+  /*---------------------------------Html ventana de servicios cards mobile posición horizontal-----------------------------------------*/
+  .servicios__contenedor {
+    flex-wrap: wrap;
+    gap: 1.7rem;
+    margin: 1rem;
+  }
+  /*------------------------------------Html ventana de Equipo mobile posición horizontal---------------------------------------------------------------*/
+  .equipo__contenedor__texto {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .equipo__imagenPrincipal {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+  }
+  .equipo__farmaceuticos__contenedor {
+    width: 54%;
+    height: fit-content;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .equipo__parrafo {
+    margin-left: 3rem;
+  }
+  .equipo__contenedor--texto {
+    padding-right: 0;
+    margin-top: 1rem;
+  }
+  .equipo__imagen__farmaceuticos {
+    width: 11rem;
+    height: 11rem;
+    margin-left: 0;
+  }
+
+  /*---------------------------Html ventana de historia - linea temporal mobile posición horizontal-----------------------------------------*/
+  .linea__temporal {
+    margin: 50px auto;
+  }
+  .linea__temporal::after {
+    left: 31px;
+  }
+  .linea__temporal__contenedor {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+  .contenedor__derecho {
+    left: 0;
+  }
+  .linea__temporal__imagen {
+    left: 10px;
+  }
+  .contenedor__derecho .linea__temporal__imagen {
+    left: 0.75rem; /*Se desplazaran todas las imagenes de logo al lado izquierdo para poder tener mejor 
+    visibilidad y una pantalla responsive*/
+  }
+  .contenedor__derecho__flecha {
+    border-right: 0.9375rem solid #b7e192;
+    border-left: 0;
+    left: -0.9375rem;
+  }
+  .contenedor__izquierdo__flecha {
+    border-right: 0.9375rem solid#b7e192;
+    border-left: 0;
+    left: -0.9375rem;
+  }
+  /*---------------------------------------Html ventana de ortopedia mobile posición horizontal----------------------------------------*/
+  .contenido__ortopedia {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .ortopedia__imagen {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+  .ortopedia__parrafo {
+    margin-left: 5rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #1c2d0e;
+  }
+  /*----------------------------------Html ventana de dermocosmetica mobile posición horizontal-----------------------------------------*/
+  .contenido__dermocosmetica {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .dermocosmetica__imagen {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+  .dermocosmetica__parrafo {
+    margin-left: 5rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #1c2d0e;
+  }
+  /*--------------------------------Html ventana de fitoterapia mobile posición horizontal-----------------------------------------*/
+  .contenido__fitoterapia {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .fitoterapia__imagen {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+  .fitoterapia__parrafo {
+    margin-left: 5rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #1c2d0e;
+  }
+}
+
+/*------------------------------------------Responsive en dispositivo mobile posición vertical-----------------------------------------*/
+@media screen and (max-width: 575px) and (min-width: 320px) {
+  /*Header responsive mobile posición vertical*/
+  .header__logoFarmacia {
+    padding-top: 1.5rem;
+    width: 12rem;
+    height: 4.5rem;
+  }
+  .header__logoFarmacia:hover {
+    width: 13rem;
+    height: 5.5rem;
+  }
+  .boton__hamburguerIcon {
+    display: block;
+    position: absolute;
+    top: 1.9375rem;
+    right: 1.5625rem;
+    transition: 0.2s 0.1s;
+  }
+  .boton__hamburguerIcon span {
+    margin: 0.5rem 0;
+  }
+  .boton__hamburguerIcon:hover {
+    transform: rotate(
+      360deg
+    ); /*Esta funcion lo que realiza es que cuando se establezca el hover el boton hamburguerIcon
+        con todos los span adentro den un efecto de giro de 360 grados*/
+  }
+  .header {
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.864);
+    padding-right: 0;
+  }
+  .header__menuNavegacion {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: none;
+    opacity: 0;
+  }
+  .header__menuNavegacion__elemento--texto {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  /*Este keyframe empieza con la animacion en opacity 0 y finaliza en 1 para no tener una opacidad muy alta y
+   repentina a la vista del usuario en donde se aplica que es la transicion en el despliegue del menu hamburguesa 
+   con clase activado tambien se coloca una animacion ease-in-out both para que en ambos sentidos la transición del
+   despliegue y cierre del header___menuNavegacion sea lenta en ambos sentidos*/
+  @keyframes muestraMenu {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .header__menuNavegacion.activado {
+    display: flex;
+    animation: muestraMenu 350ms ease-in-out both;
+  }
+  /*la clase animado en el keyframes seda para la rotacion correcta de la barra 1 y 3 para formar la X por eso 
+   se da una opacity de 0 en la barra 2 que es la del medio para que no aparezca en la activacion en javascript 
+   de la clase animado sedan simbolos negativos y positivos de los grados ya que giran conforme a las manesillas 
+   del reloj*/
+  span.barra1.animado {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  span.barra2.animado {
+    opacity: 0;
+  }
+  span.barra3.animado {
+    transform: rotate(45deg) translate(-9px, -6px);
+  }
+  /*---------------------------------------HeroImage responsive mobile posición vertical---------------------------------------------*/
+  .contenido__heroImage {
+    display: flex;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("../img/portadaequipomovil.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /*Para el heroImage se agrega la transición a todas las propiedades tardando 1s
+  asimismo que la transicion empiece y termine de manera lenta; en la animación se coloca
+  el nombre del identifier del keyframes que es lo que permite que se ejecute la animación con
+  cambio de 7s por imagen siendo infinito y con una velocidad linear*/
+    transition: all 1s ease-in-out;
+    animation: contenido__heroImage 21s infinite linear;
+  }
+  /*Keyframes del heroImage con cambio de tres imagenes ocupando cada una un porcentaje de 33%
+  que es lo uqe se ejecuta conjunto a la animación y transicion 
+  aplicadas a la clase contenido__heroImage*/
+  @keyframes contenido__heroImage {
+    0% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("../img/portadaequipomovil.jpeg"); /*Se realizo el el cambio de portada de equipo
+        ya que por la pantalla se corta parte de la imagen y lo ideal es que salga el equipo completo*/
+    }
+    33% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("../img/portadaequipomovil.jpeg");
+    }
+    34% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("../img/portadafarmacia1.jpg");
+    }
+    66% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("../img/portadafarmacia1.jpg");
+    }
+    67% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("../img/saladeespera.jpg");
+    }
+    100% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url("../img/saladeespera.jpg");
+    }
+  }
+
+  .contenido__heroImage__textoHero__titulo {
+    font-size: 1.5rem;
+  }
+  /*--------------------------------------Contacto informativo mobile posición vertical-----------------------------------------------*/
+  .contenido__contacto {
+    flex-wrap: wrap;
+    height: fit-content;
+    gap: 1rem;
+    padding: 1.1rem;
+    font-size: 1.1rem;
+  }
+  /*-----------------Inicio seccion calendario de guardias y vacaciones responsive mobile posición vertical---------------*/
+  .calendario__guardias__titulo {
+    font-size: 1.3rem;
+    padding-bottom: 2rem;
+  }
+  .calendario__guardias__contenedor {
+    flex-wrap: wrap;
+    text-align: center;
+    height: fit-content;
+    padding-right: 0;
+    width: 80%;
+    margin-left: 2rem;
+  }
+  .calendario__guardias__texto {
+    padding-left: 0;
+    padding-top: 1.5rem;
+    justify-content: center;
+  }
+  .calendario__guardias__texto__numero {
+    font-size: 1.3rem;
+  }
+  .calendario__guardias__texto__mes {
+    font-size: 1.3rem;
+  }
+  .calendario__guardias__texto__imagen {
+    padding-left: 2rem;
+    width: 100%;
+    height: 68%;
+  }
+  .calendario__guardias__vacaciones__año {
+    border-right: 0;
+    padding-left: 4rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  .calendario__guardias__vacaciones--texto {
+    padding-left: 0;
+    padding-top: 1.5rem;
+    font-size: 1.3rem;
+  }
+  .calendario__guardias__vacaciones__año--texto {
+    font-size: 1.3rem;
+  }
+  .calendario__guardias__vacaciones__numero--texto {
+    font-size: 1.3rem;
+  }
+  .calendario__guardias__vacaciones__fecha {
+    padding-left: 3.2rem;
+    flex-wrap: wrap;
+  }
+  .calendario__guardias__vacaciones__fechas {
+    font-size: 1rem;
+    padding-left: 0.8rem;
+    padding-top: 0.5rem;
+  }
+  .calendario__guardias__vacaciones__tituloGuardias {
+    padding-left: 0;
+    font-size: 1.3rem;
+  }
+  .calendario__guardias__vacaciones__farmaceuticos {
+    padding-left: 2.8rem;
+    gap: 0.5rem;
+  }
+  .calendario__guardias__vacaciones__purgi {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .calendario__guardias__vacaciones__guilan {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .calendario__guardias__vacaciones__bar {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .calendario__guardias__vacaciones__peru {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .calendario__guardias__vacaciones__marsin {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .calendario__guardias__vacaciones__boton--texto {
+    margin-left: 30%;
+    font-size: 1.3rem;
+  }
+  /*----------------------------Inicio tarjeta fidelización responsive mobile posición vertical--------------------------------*/
+  .tarjeta__fidelizacion__contenedor {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  .tarjeta__fidelizacion__titulo {
+    padding-top: 2.5rem;
+    padding-left: 2rem;
+    font-size: 1.3rem;
+  }
+  .tarjeta__fidelizacion__lista--texto {
+    padding-left: 2rem;
+    font-size: 1rem;
+  }
+  .tarjeta__fidelizacion__imagen {
+    width: 80%;
+    height: auto;
+    margin-left: 0;
+  }
+  .tarjeta__fidelizacion__texto {
+    align-items: baseline; /*El texto se alinea en el eje vertical alineandolo a la linea base del contenedro
+    en este caso al lado izquierdo*/
+    width: 100%;
+  }
+  /*------------------------Inicio servicios concertados responsive mobile posición vertical-------------------------------------------*/
+  .servicios__concertados__contenedor {
+    flex-direction: column-reverse; /*el column reverse se proporsiona en este caso ya que si se coloca flex
+  direction la imagen aparece abajo del texto del contenedor para que aparezca arriba toca revertirlo aplicando esta funcion*/
+    align-items: center;
+    padding: 2rem;
+  }
+  .servicios__concertados__contenedor--texto {
+    margin-top: 1rem;
+    padding-right: 0;
+  }
+  .servicios__concertados__titulo {
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+  }
+  .servicios__concertados__parrafo {
+    font-size: 1rem;
+  }
+  .servicios__concertados__imagen {
+    width: 100%;
+    margin-left: 0;
+  }
+  .servicios__concertados__contenedor.servicios__derecha {
+    left: 20%;
+  }
+  /*----------------------------------------Html ventana de Equipo mobile posición vertical---------------------------------------------------------------*/
+  .equipo__contenedor__texto {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+  .equipo__titulo {
+    font-size: 1.3rem;
+  }
+  .equipo__imagenPrincipal {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+  .equipo__parrafo {
+    margin-left: 4rem;
+    font-size: 1rem;
+  }
+  .equipo__titulo__personal {
+    font-size: 1.3rem;
+    padding-top: 2rem;
+  }
+  .equipo__farmaceuticos__contenedor {
+    width: 54%;
+    height: fit-content;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 1rem;
+  }
+  .equipo__contenedor--texto {
+    padding-right: 0;
+    margin-top: 1rem;
+  }
+  .equipo__imagen__farmaceuticos {
+    width: 9rem;
+    height: 9rem;
+    margin-left: 0;
+  }
+  .equipo__subtitulo {
+    font-size: 1rem;
+  }
+  .equipo__parrafo__farmaceuticos {
+    font-size: 1rem;
+  }
+  /*-------------------------------Inicio Reseñas de usuarios sobre la farmacia mobile posición vertical---------------------------------*/
+  .reseñas__contenedor {
+    flex-wrap: wrap;
+    width: fit-content;
+    padding: 0 2rem 0 2rem;
+  }
+  .reseñas__contenedor__texto--titulo {
+    font-size: 1.3rem;
+  }
+  .reseñas__contenedor__texto--parrafo {
+    font-size: 1rem;
+  }
+  /*----------------------------------------------- Inicio footer mobile posición vertical-------------------------------------------*/
+  .footer__copy {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+  }
+  .footer__map {
+    margin-left: 1rem;
+  }
+  .footer__texto__lista {
+    margin-left: 3rem;
+  }
+  /*---------------------------------------Html del boton calendario mobile posición vertical-----------------------------------------*/
+  .calendario__titulo {
+    font-size: 1.3rem;
+  }
+  .calendario__guardias__vacaciones__tituloGuardias2 {
+    font-size: 1.3rem;
+  }
+  .calendario__guardias__vacaciones__purgi2 {
+    font-size: 1rem;
+  }
+  .calendario__guardias__vacaciones__guilan2 {
+    font-size: 1rem;
+  }
+  .calendario__guardias__vacaciones__bar2 {
+    font-size: 1rem;
+  }
+  .calendario__guardias__vacaciones__peru2 {
+    font-size: 1rem;
+  }
+  .calendario__guardias__vacaciones__marsin2 {
+    font-size: 1rem;
+  }
+  .calendario__guardias__vacaciones__farmaceuticos2 {
+    padding-left: 2.7rem;
+  }
+  .calendario__guardias__texto__imagen2 {
+    width: 19rem;
+    height: 12rem;
+  }
+  .calendario__guardias__texto2 {
+    padding-top: 1rem;
+  }
+  .calendario__guardias__texto__numero2 {
+    font-size: 1.3rem;
+  }
+  .calendario__guardias__texto__mes2 {
+    font-size: 1.3rem;
+  }
+  /*---------------------------------Html ventana de servicios cards mobile posición vertical-----------------------------------------*/
+  .servicios__contenedor {
+    flex-wrap: wrap;
+    gap: 1.7rem;
+  }
+  .servicios__titulo {
+    font-size: 1.3rem;
+  }
+  .servicios__titulo__card {
+    font-size: 1.3rem;
+  }
+  .servicios__texto__card {
+    font-size: 1rem;
+  }
+  .servicios__ortopedia__imagen {
+    width: 11rem;
+    height: 11.5rem;
+  }
+  .servicios__ortopedia__imagen:hover {
+    width: 13rem;
+    height: 12.5rem;
+  }
+  .servicios__dermocosmetica__imagen {
+    width: 11rem;
+    height: 11.5rem;
+  }
+  .servicios__dermocosmetica__imagen:hover {
+    width: 13rem;
+    height: 12.5rem;
+  }
+  .servicios__fitoterapia__imagen {
+    width: 11rem;
+    height: 11.5rem;
+  }
+  .servicios__fitoterapia__imagen:hover {
+    width: 13rem;
+    height: 12.5rem;
+  }
+  /*---------------------------------Html ventana de historia - linea temporal mobile posición vertical-----------------------------------------*/
+
+  .historia__titulo {
+    font-size: 1.3rem;
+  }
+  .historia__subtitulo {
+    font-size: 1.3rem;
+  }
+  .linea__temporal__titulo__texto {
+    font-size: 1.3rem;
+  }
+  .linea__temporal__parrafo {
+    font-size: 1rem;
+  }
+  .linea__temporal {
+    margin: 3.125rem auto;
+  }
+  .linea__temporal::after {
+    left: 1.9375rem;
+  }
+  .linea__temporal__contenedor {
+    width: 100%;
+    padding-left: 5rem;
+    padding-right: 1.5625rem;
+  }
+  .linea__temporal__contenedor--texto {
+    padding: 1.25rem 1rem;
+  }
+  .contenedor__derecho {
+    left: 0;
+  }
+  .linea__temporal__imagen {
+    left: 0.625rem;
+  }
+  .linea__temporal__imagen2 {
+    width: 87%;
+    height: auto;
+  }
+  .contenedor__derecho .linea__temporal__imagen {
+    left: 0.75rem;
+  }
+  .contenedor__derecho__flecha {
+    border-right: 0.9375rem solid #b7e192;
+    border-left: 0;
+    left: -0.9375rem;
+  }
+  .contenedor__izquierdo__flecha {
+    border-right: 0.9375rem solid #b7e192;
+    border-left: 0;
+    left: -0.9375rem;
+  }
+
+  /*---------------------------------------------------Html ventana ortopedia mobile posición vertical---------------------------------*/
+  .contenido__ortopedia {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .ortopedia__imagen {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 0;
+  }
+  .ortopedia__titulo {
+    font-size: 1.5rem;
+  }
+  .ortopedia__parrafo {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 0;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    color: #1c2d0e;
+  }
+  .ortopedia__catalogo__titulo {
+    font-size: 1.3rem;
+  }
+  .catalogo__imagen {
+    width: 14rem;
+    height: 15.8rem;
+  }
+  .catalogo__titulo__card {
+    font-size: 1.3rem;
+  }
+  .catalogo__texto__card {
+    font-size: 1rem;
+  }
+  /*-----------------------------------------Html ventana de dermocosmetica mobile posición vertical-----------------------------------------*/
+  .contenido__dermocosmetica {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .dermocosmetica__titulo {
+    font-size: 1.5rem;
+  }
+  .dermocosmetica__imagen {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 0;
+  }
+  .dermocosmetica__parrafo {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    color: #1c2d0e;
+  }
+  .dermocosmetica__marcas__titulo {
+    font-size: 1.3rem;
+    padding-left: 1rem;
+  }
+  .servicios__acordeon {
+    font-size: 1.3rem;
+  }
+  .dermocosmetica__texto {
+    font-size: 1rem;
+  }
+  .dermocosmetica__imagen2 {
+    width: 65%;
+  }
+  /*----------------------------------------------Html ventana de fitoterapia mobile posición vertical-----------------------------------------*/
+  .contenido__fitoterapia {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .fitoterapia__titulo {
+    font-size: 1.5rem;
+  }
+  .fitoterapia__imagen {
+    width: auto;
+    height: fit-content;
+    margin-bottom: 2rem;
+    margin-left: 0;
+  }
+  .fitoterapia__parrafo {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    color: #1c2d0e;
+  }
+  .fitoterapia__marcas__titulo {
+    font-size: 1.3rem;
+    padding-left: 1rem;
+  }
+  .servicios__acordeon {
+    font-size: 1.3rem;
+  }
+  .fitoterapia__texto {
+    font-size: 1rem;
+  }
+  .fitoterapia__imagen2 {
+    width: 65%;
+  }
+  /*--------------------------------------------------Inicio bottom scroll top mobile posición vertical-------------------------------------------------------*/
+  .boton__top {
+    padding: 0.3rem;
+  }
+}

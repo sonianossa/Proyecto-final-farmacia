@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmacia Purgimon Feliu</title>
+    <link rel="icon" type="image/x-icon" href="img/logo2.jpg" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-----------------------------------------------Inicio header y navBar--------------------------------------------->
+    <header class="header">
+      <a href="index.html">
+        <img
+          src="img/Logofarmacia.png"
+          alt="logo"
+          class="header__logoFarmacia"
+        />
+      </a>
+      <nav>
+        <ul class="header__menuNavegacion">
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="servicios.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Servicios</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="equipo.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Equipo</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="historia.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Historia</a
+            >
+          </li>
+        </ul>
+        <button class="boton__hamburguerIcon" type="button">
+          <!---------------------Se utilizan estos span para darles forma en css y que cada uno pueda obtener la animacion de 
+rotacion y que en javascript se pueda cambiar la forma de menu hamburguesa a la X por lo anterior
+no se utilizo fontawesome para el menu desplegable------------------------------------------------------------------->
+          <span class="barra1"></span>
+          <span class="barra2"></span>
+          <span class="barra3"></span>
+        </button>
+      </nav>
+      <div class="container__indicador">
+        <div class="indicador__progreso" id="barraScroll"></div>
+      </div>
+    </header>
+    <main class="main__ortopedia">
+      <!--------------------------------------Inicio Hero-Image pagina ortopedia----------------------------------------->
+      <div class="contenido__heroImage__ortopedia"></div>
+      <!--------------------------------------------Inicio seccion ortopedia----------------------------------------------------------------------->
+      <h2 class="ortopedia__titulo">Ortopedia</h2>
+      <div class="contenido__ortopedia">
+        <p class="ortopedia__parrafo">
+          Sección ortopedica <br />
+          Ofrecemos un amplio catalogo de servicios en nuestra seccion de
+          ortopedia con profesionales que resolveran todas tus inquietudes y te
+          ofreceran una una calidad optima de servicio y productos tales como:
+          ayudas para la movilidad, podología, terapias de comprensión,ortesis
+          entre otros.
+        </p>
+        <img
+          src="img/ortopedia2.jpg"
+          alt="Imagen seccion ortopedia"
+          class="ortopedia__imagen"
+        />
+      </div>
+      <!------------------------------------------------Overlay fotos farmacia------------------------------------------------------------------->
+      <div class="contenedor__overlay__ortopedia">
+        <div class="contenedor__overlay">
+          <img
+            src="img/portadaortopedia.jpg"
+            alt="Entrada Ortopedia"
+            class="imagen__overlay"
+          />
+          <div class="overlay__ortopedia">
+            <div class="texto__overlay">Conoce un poco de nuestra farmacia</div>
+          </div>
+        </div>
+        <div class="contenedor__overlay">
+          <img
+            src="img/ortopedia1.jpg"
+            alt="Ortopedia 1"
+            class="imagen__overlay"
+          />
+
+          <div class="overlay__ortopedia">
+            <div class="texto__overlay">
+              Todos tus productos de ortopedia en un solo lugar
+            </div>
+          </div>
+        </div>
+        <div class="contenedor__overlay">
+          <img
+            src="img/ortopedia2.jpg"
+            alt="Ortopedia 2"
+            class="imagen__overlay"
+          />
+
+          <div class="overlay__ortopedia">
+            <div class="texto__overlay">
+              Productos de calidad con los mejores profesionales
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-------------------------------------------------Inicio catalogo de servicios ortopedicos----------------------------------------------------->
+      <h2 class="ortopedia__catalogo__titulo">
+        Catalogo de nuestros servicios ortopedicos
+      </h2>
+      <div class="catalogo__ortopedia">
+        <div class="catalogo__card">
+          <img
+            src="img/ortesis.png"
+            alt="Imagen Ortesis"
+            class="catalogo__imagen"
+          />
+          <h3 class="catalogo__titulo__card">Ortesis</h3>
+          <p class="catalogo__texto__card">
+            Rodilleras,muñequeras,<br />coderas, fajas,cervicales <br />
+            y clavicula, espaldillas <br />
+            y otros productos inferiores.
+          </p>
+        </div>
+
+        <div class="catalogo__card">
+          <img
+            src="img/ayudasmovilidad.png"
+            alt="Camindor y silla de ruedas"
+            class="catalogo__imagen"
+          />
+          <h3 class="catalogo__titulo__card">Ayudas a la movilidad</h3>
+          <p class="catalogo__texto__card">
+            Andadores,bastones,<br />silla de ruedas manual,<br />
+            silla de ruedas eléctrica,<br />
+            y muletas.
+          </p>
+        </div>
+
+        <div class="catalogo__card">
+          <img
+            src="img/protectorantiescaras.jpg"
+            alt="Protector antiescara"
+            class="catalogo__imagen"
+          />
+          <h3 class="catalogo__titulo__card">Paciente encamado</h3>
+          <p class="catalogo__texto__card">
+            Protector antiescaras,<br />y cojines antiescaras.
+          </p>
+        </div>
+
+        <div class="catalogo__card">
+          <img
+            src="img/plantillasortopedicas.jpg"
+            alt="Plantillas ortopedicas"
+            class="catalogo__imagen"
+          />
+          <h3 class="catalogo__titulo__card">Podología</h3>
+          <p class="catalogo__texto__card">
+            Plantillas y taloneras,<br />zapatos ortopédicos,<br />
+            complementos del pie.
+          </p>
+        </div>
+
+        <div class="catalogo__card">
+          <img
+            src="img/kinesiotape.png"
+            alt="kinesiotape"
+            class="catalogo__imagen"
+          />
+          <h3 class="catalogo__titulo__card">Terapia de comprensión</h3>
+          <p class="catalogo__texto__card">
+            Kinesiotape,media corta,<br />
+            larga y panti,<br />calcetines.
+          </p>
+        </div>
+
+        <div class="catalogo__card">
+          <img
+            src="img/gruaspacientes.png"
+            alt="Gruas Pacientes"
+            class="catalogo__imagen"
+          />
+          <h3 class="catalogo__titulo__card">Servicios de alquiler</h3>
+          <p class="catalogo__texto__card">
+            Grua eléctrica,<br />silla de ruedas,<br />andadores,arneses,<br />
+            y muletas.
+          </p>
+        </div>
+      </div>
+      <!--------------------------------------------------Inicio bottom scroll top------------------------------------------------------->
+      <button class="boton__top" id="btn__top">
+        <i class="fa-solid fa-sort-up"></i>
+      </button>
+    </main>
+    <!-------------Inicio del footer se observara una breve discripcion de la faramacia, el contacto, sus redes sociales
+y un mapa con su ubicación------------------------------------------------------------------------------------------>
+    <footer class="footer">
+      <div class="footer__contenedor__texto">
+        <div class="footer__copy">
+          <span>Farmacia Purgimon Feliu.&copy;</span>
+        </div>
+        <div class="footer__texto">
+          <ul class="footer__texto__lista">
+            <li class="footer__texto__rrss">
+              <a href="https://www.instagram.com/farmaciapurgimon1973/?hl=es"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://www.tiktok.com/@farmacia_purgimon"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a
+                href="https://www.facebook.com/people/Farm%C3%A0cia-Purgimon/100063791270302/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://wa.me/34616020580"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.376233419235!2d1.4562016753268265!3d42.35582053537064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5edc6126166e1%3A0x6221596b4e499cb3!2sFarm%C3%A0cia%20Purgimon!5e0!3m2!1ses!2ses!4v1697287989082!5m2!1ses!2ses"
+          width="250"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

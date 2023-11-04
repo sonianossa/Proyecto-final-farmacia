@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmacia Purgimon Feliu</title>
+    <link rel="icon" type="image/x-icon" href="img/logo2.jpg" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-----------------------------------------------Inicio header y navBar--------------------------------------------->
+    <header class="header">
+      <a href="index.html">
+        <img
+          src="img/Logofarmacia.png"
+          alt="logo"
+          class="header__logoFarmacia"
+        />
+      </a>
+      <nav>
+        <ul class="header__menuNavegacion">
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="servicios.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Servicios</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="equipo.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Equipo</a
+            >
+          </li>
+          <li class="header__menuNavegacion__elemento">
+            <a
+              href="historia.html"
+              class="header__menuNavegacion__elemento--texto"
+              >Historia</a
+            >
+          </li>
+        </ul>
+        <button class="boton__hamburguerIcon" type="button">
+          <!---------------------Se utilizan estos span para darles forma en css y que cada uno pueda obtener la animacion de 
+rotacion y que en javascript se pueda cambiar la forma de menu hamburguesa a la X por lo anterior
+no se utilizo fontawesome para el menu desplegable------------------------------------------------------------------->
+          <span class="barra1"></span>
+          <span class="barra2"></span>
+          <span class="barra3"></span>
+        </button>
+      </nav>
+      <div class="container__indicador">
+        <div class="indicador__progreso" id="barraScroll"></div>
+      </div>
+    </header>
+
+    <!---------------------------------------------Inicio main------------------------------------------------------------------->
+    <main class="main__dermocosmetica">
+      <div class="contenido__heroImage__dermocosmetica"></div>
+      <!--------------------------------------------Inicio seccion dermocosmetica----------------------------------------------------------------------->
+      <h2 class="dermocosmetica__titulo">Dermocosmética</h2>
+      <div class="contenido__dermocosmetica">
+        <p class="dermocosmetica__parrafo">
+          Sección dermocosmética <br />
+          La dermocosmética ofrece una amplia gama de productos para el cuidado
+          de la piel mejorando la apariencia dermatológica de la misma, para
+          tratar afecciones no patológicas; es por ello que ofrecemos marcas
+          como Eucerin, Vichy, Sensilis, Apivita entre otras.
+        </p>
+        <img src="img/dermocosmetica.jpg" class="dermocosmetica__imagen" />
+      </div>
+      <h2 class="dermocosmetica__marcas__titulo">
+        Conoce nuestras marcas de productos ofertados
+      </h2>
+      <!----------------------------------------------Inicio acordeon dermocosmética--------------------------------------------------------------------------------------------->
+      <button class="servicios__acordeon">Eucerin</button>
+      <div class="dermocosmetica__panel">
+        <p class="dermocosmetica__texto">
+          Eucerin AtopiControl es una gama de productos dermocosméticos que
+          cuidan la piel seca e irritable y, también, la piel atópica durante
+          las fases inactivas y cuando se producen brotes agudos. Todos ellos
+          están clínica y dermatológicamente probados a la hora de reducir la
+          sequedad, la desescamación y la tensión a la vez que alivian el picor
+          y en todos está probado que son compatibles con la piel atópica.
+        </p>
+        <img
+          src="img/imageneucerin.png"
+          alt="Imagen Eucerin"
+          class="dermocosmetica__imagen2"
+        />
+      </div>
+
+      <button class="servicios__acordeon">Vichy</button>
+      <div class="dermocosmetica__panel">
+        <p class="dermocosmetica__texto">
+          CUIDADO DE LA PIEL Con más de 90 años de experiencia e innovación, los
+          Laboratorios Vichy están a la vanguardia del cuidado de la piel y se
+          comprometen a utilizar ingredientes eficaces y seguros respaldados por
+          la ciencia. Descubra nuestra gama de productos para el cuidado de la
+          piel formulados para conseguir una piel con un aspecto saludable y
+          radiante.
+        </p>
+        <img
+          src="img/imagenvichy.png"
+          alt="Imagen Eucerin"
+          class="dermocosmetica__imagen2"
+        />
+      </div>
+
+      <button class="servicios__acordeon">Sensilis</button>
+      <div class="dermocosmetica__panel">
+        <p class="dermocosmetica__texto">
+          Hemos creado Sensitive Skin Lab, el laboratorio farmacéutico donde
+          diseñamos rituales para el cuidado de la piel sensible a través de
+          nuestro expertise en dermocosmética. Seleccionamos con exquisito
+          cuidado todos nuestros ingredientes, consiguiendo así fórmulas
+          respetuosas con la piel sensible con toda la sensorialidad de la alta
+          cosmética.
+        </p>
+        <img
+          src="img/imagensensilis.png"
+          alt="Imagen Eucerin"
+          class="dermocosmetica__imagen2"
+        />
+      </div>
+
+      <button class="servicios__acordeon">Apivita</button>
+      <div class="dermocosmetica__panel">
+        <p class="dermocosmetica__texto">
+          APIVITA ofrece gamas específicas de productos de belleza con acción
+          múltiple para cubrir todas las necesidades del cuidado de la piel.
+          Desde limpiadores faciales e hidratación diaria hasta productos
+          reafirmantes y antiedad. Sus fórmulas innovadoras de cosmética natural
+          tratan la piel, dejándola luminosa y con un aspecto saludable. Explora
+          nuestra amplia gama de limpiadores y tónicos faciales, sérums y
+          aceites, cremas, exfoliantes y mascarillas faciales para crear tu
+          rutina natural del cuidado de la piel.
+        </p>
+        <img
+          src="img/imagenapivita.png"
+          alt="Imagen Eucerin"
+          class="dermocosmetica__imagen2"
+        />
+      </div>
+      <!--------------------------------------------------Inicio bottom scroll top------------------------------------------------------->
+      <button class="boton__top" id="btn__top">
+        <i class="fa-solid fa-sort-up"></i>
+      </button>
+    </main>
+    <!-------------Inicio del footer se observara una breve discripcion de la faramacia, el contacto, sus redes sociales
+y un mapa con su ubicación------------------------------------------------------------------------------------------>
+    <footer class="footer">
+      <div class="footer__contenedor__texto">
+        <div class="footer__copy">
+          <span>Farmacia Purgimon Feliu.&copy;</span>
+        </div>
+        <div class="footer__texto">
+          <ul class="footer__texto__lista">
+            <li class="footer__texto__rrss">
+              <a href="https://www.instagram.com/farmaciapurgimon1973/?hl=es"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://www.tiktok.com/@farmacia_purgimon"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a
+                href="https://www.facebook.com/people/Farm%C3%A0cia-Purgimon/100063791270302/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </li>
+            <li class="footer__texto__rrss">
+              <a href="https://wa.me/34616020580"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.376233419235!2d1.4562016753268265!3d42.35582053537064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5edc6126166e1%3A0x6221596b4e499cb3!2sFarm%C3%A0cia%20Purgimon!5e0!3m2!1ses!2ses!4v1697287989082!5m2!1ses!2ses"
+          width="250"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
